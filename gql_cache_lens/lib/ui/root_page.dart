@@ -1,5 +1,6 @@
-import 'package:devtools_extensions/devtools_extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:gql_cache_lens/service/app_service.dart';
+import 'package:gql_cache_lens/service/gql_cache.dart';
 import 'package:gql_cache_lens/ui/object_page.dart';
 
 final class RootPage extends StatefulWidget {
@@ -14,12 +15,15 @@ final class _RootState extends State<RootPage>
   _RootState();
 
   late final TabController _tabController;
-  Map<_Tab, Map<String, dynamic>> _cache = {};
+  GqlCacheView _cache = const GqlCacheView();
 
   @override
   void initState() {
-    _tabController = TabController(length: _Tab.values.length, vsync: this);
-    _load().then((cache) => setState(() => _cache = cache));
+    _tabController = TabController(
+      length: GqlCacheCategory.values.length,
+      vsync: this,
+    );
+    load();
     super.initState();
   }
 
@@ -40,61 +44,38 @@ final class _RootState extends State<RootPage>
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
-            onPressed: () {
-              _load().then((cache) => setState(() => _cache = cache));
-            },
+            onPressed: load,
           ),
         ],
         bottom: TabBar(
           controller: _tabController,
           tabAlignment: TabAlignment.fill,
-          tabs: _Tab.values.map((tab) => Tab(text: tab.title)).toList(),
+          tabs: GqlCacheCategory.values
+              .map((category) => Tab(text: category.title))
+              .toList(),
         ),
       ),
       body: TabBarView(
         controller: _tabController,
-        children:
-            _Tab.values.map((tab) => _CacheMapView(_cache[tab] ?? {})).toList(),
+        children: GqlCacheCategory.values
+            .map((category) => _CacheMapView(_cache[category]))
+            .toList(),
       ),
     );
   }
 
-  Future<Map<_Tab, Map<String, dynamic>>> _load() async {
-    final response = await serviceManager
-        .callServiceExtensionOnMainIsolate('gql_cache_lens.load');
-
-    var queryMap = <String, dynamic>{};
-    final queryValue = response.json?['Query'];
-    if (queryValue is Map<String, dynamic>) {
-      queryMap = queryValue..removeWhere((k, _) => k == '__typename');
-    }
-
-    var mutationMap = <String, dynamic>{};
-    final mutationValue = response.json?['Mutation'];
-    if (mutationValue is Map<String, dynamic>) {
-      mutationMap = mutationValue..removeWhere((k, _) => k == '__typename');
-    }
-
-    final cacheMap = (response.json ?? {})
-      ..removeWhere((k, _) => k == 'Query' || k == 'Mutation');
-
-    return {
-      _Tab.cache: cacheMap,
-      _Tab.query: queryMap,
-      _Tab.mutation: mutationMap,
-    };
+  void load() {
+    AppService.requestGqlCache().then(
+      (cache) => setState(() => _cache = cache),
+    );
   }
 }
 
-enum _Tab {
-  cache,
-  query,
-  mutation;
-
+extension on GqlCacheCategory {
   String get title => switch (this) {
-        _Tab.cache => 'Cache',
-        _Tab.query => 'Query',
-        _Tab.mutation => 'Mutation',
+        GqlCacheCategory.cache => 'Cache',
+        GqlCacheCategory.query => 'Query',
+        GqlCacheCategory.mutation => 'Mutation',
       };
 }
 
