@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 final class ObjectPage extends StatelessWidget {
   const ObjectPage({
+    super.key,
     required this.cacheMap,
     required this.dataId,
     required this.object,

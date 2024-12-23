@@ -14,18 +14,14 @@
             ]
         },
         {
-            "name": "gql_cache_lens (profile mode)",
-            "cwd": "gql_cache_lens",
+            "name": "example_app (debug)",
+            "cwd": "example_app",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "args": [
+                "--debug"
+            ]
         },
-        {
-            "name": "gql_cache_lens (release mode)",
-            "cwd": "gql_cache_lens",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        }
+
     ]
 }
