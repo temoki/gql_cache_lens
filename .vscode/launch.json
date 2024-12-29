@@ -3,15 +3,14 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
+    "configurations": [        
         {
             "name": "gql_cache_lens + simulated environment",
-            "cwd": "gql_cache_lens",
             "request": "launch",
             "type": "dart",
-            "args": [
-                "--dart-define=use_simulated_environment=true"
-            ]
+            "toolArgs": [
+                "--dart-define", "use_simulated_environment=true"
+            ],
         },
         {
             "name": "example_app (debug)",
@@ -20,9 +19,10 @@
             "type": "dart",
             "args": [
                 "--debug",
-                "--dart-define=.env"
+            ],
+            "toolArgs": [
+                "--dart-define-from-file", ".env"
             ]
         },
-
     ]
 }

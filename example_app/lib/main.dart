@@ -1,14 +1,28 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:github_issue_app/src/infra/graph_ql_client_factory.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-import 'app.dart';
+import 'src/environment.dart';
+import 'src/ui/app.dart';
 
 void main() {
-  const githubPat = String.fromEnvironment('GITHUB_PAT');
-  final authLink = AuthLink(getToken: () => 'Bearer $githubPat');
-  final httpLink = HttpLink('https://api.github.com/graphql');
-  final link = httpLink.concat(authLink);
-  final cache = GraphQLCache(store: InMemoryStore());
-  final client = ValueNotifier(GraphQLClient(link: link, cache: cache));
-  runApp(GraphQLProvider(client: client, child: const App()));
+  final client = GraphQLClientFactory.gitHubClient(
+    token: Environment.githubToken,
+  );
+
+  registerExtension('ext.gql_cache_lens.load', (_, __) async {
+    final cacheMap = client.cache.store.toMap();
+    final cacheJson = jsonEncode(cacheMap);
+    return ServiceExtensionResponse.result(cacheJson);
+  });
+
+  runApp(
+    GraphQLProvider(
+      client: ValueNotifier(client),
+      child: const App(),
+    ),
+  );
 }

@@ -1,1 +1,2 @@
-include: package:very_good_analysis/analysis_options.yaml
+# https://pub.dev/packages/pedantic_mono
+include: package:pedantic_mono/analysis_options.yaml
