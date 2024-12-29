@@ -10,11 +10,14 @@ Currently, `gql_cache_lens` supports the following GraphQL packages:
 - [graphql](https://pub.dev/packages/graphql)
 - [graphql_flutter](https://pub.dev/packages/graphql_flutter)
 
+## Screenshots
+![](screenshot_1.png) ![](screenshot_2.png)
+
 ## Installation
 To install `gql_cache_lens`, add the package to your `pubspec.yaml` file:
 ```yaml
 dev_dependencies:
-  gql_cache_lens: ^0.2.0
+  gql_cache_lens: ^0.3.0
 ```
 
 Alternatively, you can run the following command
