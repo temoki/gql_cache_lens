@@ -1,5 +1,5 @@
 name: gql_cache_lens
-version: 0.6.0
+version: 0.6.1
 issueTracker: https://github.com/temoki/gql_cache_lens/issues
 materialIconCodePoint: '0xe3b4'
 requiresConnection: true
