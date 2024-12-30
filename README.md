@@ -10,8 +10,8 @@ This package adds a new tool to Flutter's DevTools, utilizing the [devtools_exte
 
 ## Supported GraphQL Packages
 Currently, `gql_cache_lens` supports the following GraphQL packages:
-- [graphql](https://pub.dev/packages/graphql)
-- [graphql_flutter](https://pub.dev/packages/graphql_flutter)
+- [graphql](https://pub.dev/packages/graphql), [graphql_flutter](https://pub.dev/packages/graphql_flutter)
+- [ferry](https://pub.dev/packages/ferry), [ferry_flutter](ferry_flutter: ^0.9.0)
 
 ## Screenshots
 <img width="300" src="https://github.com/temoki/gql_cache_lens/raw/main/screenshot_1.png" /> <img width="300" src="https://github.com/temoki/gql_cache_lens/raw/main/screenshot_2.png" />
@@ -20,7 +20,7 @@ Currently, `gql_cache_lens` supports the following GraphQL packages:
 To install `gql_cache_lens`, add the package to your `pubspec.yaml` file:
 ```yaml
 dev_dependencies:
-  gql_cache_lens: ^0.5.0
+  gql_cache_lens: ^0.6.0
 ```
 
 Alternatively, you can run the following command
@@ -30,14 +30,28 @@ flutter pub add --dev gql_cache_lens
 
 ## Usage
 To use `gql_cache_lens`, add a `ServiceExtensionHandler` as shown below.
-Return a JSON-encoded Map obtained from the `Store`'s `toMap()` method in the `ServiceExtensionResponse`'s result.
+Return a JSON-encoded Map obtained from the `Store` in the `ServiceExtensionResponse`'s result.
 
+### For graphql package
 ```dart
 final GrpahQLClient client = ...;
 registerExtension('ext.gql_cache_lens.load', (_, __) async {
   final GraphQLCache cache = client.cache;
   final Store store = cache.store;
   final cacheJson = jsonEncode(store.toMap());
+  return ServiceExtensionResponse.result(cacheJson);
+});
+```
+
+### For ferry package
+```dart
+final Client client = ...;
+registerExtension('ext.gql_cache_lens.load', (_, __) async {
+    final Cache cache = client.cache;
+    final Store store = cache.store;
+    final cacheEntries = store.keys.map((k) => MapEntry(k, store.get(k)));
+    final cacheMap = Map.fromEntries(cacheEntries);
+    final cacheJson = jsonEncode(cacheMap);
   return ServiceExtensionResponse.result(cacheJson);
 });
 ```
