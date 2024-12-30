@@ -3,32 +3,71 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:ferry/ferry.dart' as ferry;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:graphql_flutter/graphql_flutter.dart' as graphql;
 
-import 'src/environment.dart';
-import 'src/infra/graph_ql_client_factory.dart';
-import 'src/ui/app.dart';
+import 'src/ui/ferry/ferry_factory.dart';
+import 'src/ui/graphql/graphql_factory.dart';
+import 'src/ui_factory.dart';
+
+const githubApiUrl = 'https://api.github.com/graphql';
+const githubToken = String.fromEnvironment('GITHUB_TOKEN');
+const githubRepoOwner = String.fromEnvironment('GITHUB_REPO_OWNER');
+const githubRepoName = String.fromEnvironment('GITHUB_REPO_NAME');
+const graphqlPackage = String.fromEnvironment('GRAPHQL_PACKAGE');
 
 void main() {
-  final GraphQLClient client = GraphQLClientFactory.gitHubClient(
-    token: Environment.githubToken,
+  final factory = switch (graphqlPackage) {
+    'graphql' => _createGraphqlFactory(),
+    'ferry' => _createFerryFactory(),
+    _ => throw ArgumentError('Unknown GraphQL package: $graphqlPackage'),
+  };
+  runApp(factory.makeApp());
+}
+
+UiFactory _createGraphqlFactory() {
+  final factory = GraphqlFactory(
+    githubToken: githubToken,
+    githubApiUrl: githubApiUrl,
+    repositoryOwner: githubRepoOwner,
+    repositoryName: githubRepoName,
   );
 
   if (kDebugMode) {
     registerExtension('ext.gql_cache_lens.load', (_, __) async {
-      final GraphQLCache cache = client.cache;
-      final Store store = cache.store;
-      final cacheJson = jsonEncode(store.toMap());
+      final graphql.GraphQLClient client = factory.client;
+      final graphql.GraphQLCache cache = client.cache;
+      final graphql.Store store = cache.store;
+      final cacheMap = store.toMap();
+      final cacheJson = jsonEncode(cacheMap);
       return ServiceExtensionResponse.result(cacheJson);
     });
   }
 
-  runApp(
-    GraphQLProvider(
-      client: ValueNotifier(client),
-      child: const App(),
-    ),
+  return factory;
+}
+
+UiFactory _createFerryFactory() {
+  final factory = FerryFactory(
+    githubToken: githubToken,
+    githubApiUrl: githubApiUrl,
+    repositoryOwner: githubRepoOwner,
+    repositoryName: githubRepoName,
   );
+
+  if (kDebugMode) {
+    registerExtension('ext.gql_cache_lens.load', (_, __) async {
+      final ferry.Client client = factory.client;
+      final ferry.Cache cache = client.cache;
+      final ferry.Store store = cache.store;
+      final cacheEntries = store.keys.map((k) => MapEntry(k, store.get(k)));
+      final cacheMap = Map.fromEntries(cacheEntries);
+      final cacheJson = jsonEncode(cacheMap);
+      return ServiceExtensionResponse.result(cacheJson);
+    });
+  }
+
+  return factory;
 }

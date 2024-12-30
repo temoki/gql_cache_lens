@@ -1,0 +1,18 @@
+query Issues($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    id
+    issues(first: 50, states: OPEN, orderBy: {field: CREATED_AT, direction: DESC}) {
+      edges {
+        node {
+          id
+          number
+          title
+          createdAt
+          author {
+            login
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+targets:
+  $default:
+    builders:
+      # for graphql
+      graphql_codegen:
+        options:
+          clients:
+            - graphql_flutter
+          outputDirectory: gen/graphql
+      # for ferry
+      ferry_generator|graphql_builder:
+        enabled: true
+        options:
+          schema: github_issue_app|lib/src/graphql/schema.graphql
+          output_dir: gen/ferry
+      ferry_generator|serializer_builder:
+        enabled: true
+        options:
+          schema: github_issue_app|lib/src/graphql/schema.graphql
+          output_dir: gen/ferry
