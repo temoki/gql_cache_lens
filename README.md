@@ -1,9 +1,12 @@
 # gql_cache_lens
-A Flutter DevTools Extension for inspecting GraphQL cache
+A Flutter [DevTools extension](https://pub.dev/packages/devtools_extensions) for inspecting GraphQL cache
 
 ## Features
-- View the entire GraphQL cache
-- Inspect individual cache entries
+This package adds a new tool to Flutter's DevTools, utilizing the [devtools_extensions](https://pub.dev/packages/devtools_extensions) framework. With this tool, you can:
+
+- View a list of data stored in the GraphQL cache store
+  - The data list is categorized into three tabs: Cache, Query, and Mutation
+- Inspect the details of each cache entry
 
 ## Supported GraphQL Packages
 Currently, `gql_cache_lens` supports the following GraphQL packages:
@@ -32,9 +35,10 @@ Return a JSON-encoded Map obtained from the `Store`'s `toMap()` method in the `S
 ```dart
 final GrpahQLClient client = ...;
 registerExtension('ext.gql_cache_lens.load', (_, __) async {
-    final cacheMap = client.cache.store.toMap();
-    final cacheJson = jsonEncode(cacheMap);
-    return ServiceExtensionResponse.result(cacheJson);
+  final GraphQLCache cache = client.cache;
+  final Store store = cache.store;
+  final cacheJson = jsonEncode(store.toMap());
+  return ServiceExtensionResponse.result(cacheJson);
 });
 ```
 

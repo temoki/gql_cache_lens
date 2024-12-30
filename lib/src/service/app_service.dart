@@ -1,5 +1,6 @@
 import 'package:devtools_extensions/devtools_extensions.dart';
-import 'package:gql_cache_lens/service/gql_cache.dart';
+
+import 'gql_cache.dart';
 
 final class AppService {
   const AppService._();

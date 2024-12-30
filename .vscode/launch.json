@@ -13,8 +13,8 @@
             ],
         },
         {
-            "name": "example_app (debug)",
-            "cwd": "example_app",
+            "name": "example app (debug)",
+            "cwd": "example",
             "request": "launch",
             "type": "dart",
             "args": [
