@@ -11,7 +11,7 @@ This package adds a new tool to Flutter's DevTools, utilizing the [devtools_exte
 ## Supported GraphQL Packages
 Currently, `gql_cache_lens` supports the following GraphQL packages:
 - [graphql](https://pub.dev/packages/graphql), [graphql_flutter](https://pub.dev/packages/graphql_flutter)
-- [ferry](https://pub.dev/packages/ferry), [ferry_flutter](ferry_flutter: ^0.9.0)
+- [ferry](https://pub.dev/packages/ferry), [ferry_flutter](https://pub.dev/packages/ferry_flutter)
 
 ## Screenshots
 <img width="300" src="https://github.com/temoki/gql_cache_lens/raw/main/screenshot_1.png" /> <img width="300" src="https://github.com/temoki/gql_cache_lens/raw/main/screenshot_2.png" />
