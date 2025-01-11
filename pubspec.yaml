@@ -2,7 +2,7 @@ name: gql_cache_lens
 description: "A Flutter DevTools Extension for inspecting GraphQL cache in your Flutter applications."
 repository: "https://github.com/temoki/gql_cache_lens"
 
-version: 0.6.1
+version: 0.7.0
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
