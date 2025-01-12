@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'app_service_provider.dart';
+
 final class ObjectPage extends StatelessWidget {
   const ObjectPage({
     super.key,
-    required this.normalizedCacheMap,
     required this.dataId,
     required this.object,
   });
 
-  final Map<String, dynamic> normalizedCacheMap;
   final String dataId;
   final dynamic object;
 
@@ -31,7 +31,6 @@ final class ObjectPage extends StatelessWidget {
       body: ListView.builder(
         itemCount: objectMap.length,
         itemBuilder: (_, index) => _ObjectTile(
-          normalizedCacheMap,
           objectMap.entries.elementAt(index),
         ),
       ),
@@ -40,9 +39,8 @@ final class ObjectPage extends StatelessWidget {
 }
 
 final class _ObjectTile extends StatelessWidget {
-  const _ObjectTile(this.normalizedCacheMap, this.entry, {this.level = 0});
+  const _ObjectTile(this.entry, {this.level = 0});
 
-  final Map<String, dynamic> normalizedCacheMap;
   final MapEntry<String, dynamic> entry;
   final int level;
 
@@ -61,7 +59,6 @@ final class _ObjectTile extends StatelessWidget {
         children: value.entries
             .map(
               (childEntry) => _ObjectTile(
-                normalizedCacheMap,
                 MapEntry('${childEntry.key}', childEntry.value),
                 level: level + 1,
               ),
@@ -77,7 +74,6 @@ final class _ObjectTile extends StatelessWidget {
             .entries
             .map(
               (childEntry) => _ObjectTile(
-                normalizedCacheMap,
                 MapEntry('[${childEntry.key}]', childEntry.value),
                 level: level + 1,
               ),
@@ -85,22 +81,29 @@ final class _ObjectTile extends StatelessWidget {
             .toList(),
       );
     }
-    final refObject = key == r'$ref' ? normalizedCacheMap[value] : null;
-    return ListTile(
-      contentPadding: padding,
-      title: Text(key, style: keyStyle),
-      subtitle: (value != null) ? Text('$value', style: valueStyle) : null,
-      onTap: (refObject != null)
-          ? () => Navigator.of(context).push(
-                MaterialPageRoute<ObjectPage>(
-                  builder: (_) => ObjectPage(
-                    normalizedCacheMap: normalizedCacheMap,
-                    dataId: '$value',
-                    object: refObject,
-                  ),
-                ),
-              )
-          : null,
+
+    final appService = AppServiceProvider.of(context);
+    return ListenableBuilder(
+      listenable: appService,
+      builder: (_, __) {
+        final normalizedMap = appService.gqlCache.normalized;
+        final refObject = key == r'$ref' ? normalizedMap[value] : null;
+        return ListTile(
+          contentPadding: padding,
+          title: Text(key, style: keyStyle),
+          subtitle: (value != null) ? Text('$value', style: valueStyle) : null,
+          onTap: (refObject != null)
+              ? () => Navigator.of(context).push(
+                    MaterialPageRoute<ObjectPage>(
+                      builder: (_) => ObjectPage(
+                        dataId: '$value',
+                        object: refObject,
+                      ),
+                    ),
+                  )
+              : null,
+        );
+      },
     );
   }
 }

@@ -1,54 +1,52 @@
 enum GqlCacheCategory {
-  cache,
+  normalized,
   query,
   mutation;
 }
 
-typedef GqlCacheMap = Map<String, dynamic>;
+final class GqlCacheMaps {
+  const GqlCacheMaps({
+    Map<String, dynamic>? normalized,
+    Map<String, dynamic>? query,
+    Map<String, dynamic>? mutation,
+  })  : normalized = normalized ?? const {},
+        query = query ?? const {},
+        mutation = mutation ?? const {};
 
-final class GqlCacheView {
-  const GqlCacheView({
-    GqlCacheMap? cacheMap,
-    GqlCacheMap? queryMap,
-    GqlCacheMap? mutationMap,
-  })  : cacheMap = cacheMap ?? const {},
-        queryMap = queryMap ?? const {},
-        mutationMap = mutationMap ?? const {};
-
-  factory GqlCacheView.fromGraphQLFlutter(
+  factory GqlCacheMaps.fromJson(
     Map<String, dynamic> json,
   ) {
-    var queryMap = <String, dynamic>{};
+    var query = <String, dynamic>{};
     final queryValue = json['Query'];
     if (queryValue is Map<String, dynamic>) {
-      queryMap = queryValue..removeWhere((k, _) => k == '__typename');
+      query = queryValue..removeWhere((k, _) => k == '__typename');
     }
 
-    var mutationMap = <String, dynamic>{};
+    var mutation = <String, dynamic>{};
     final mutationValue = json['Mutation'];
     if (mutationValue is Map<String, dynamic>) {
-      mutationMap = mutationValue..removeWhere((k, _) => k == '__typename');
+      mutation = mutationValue..removeWhere((k, _) => k == '__typename');
     }
 
-    final cacheMap = json
+    final normalized = json
       ..removeWhere((k, _) => k == 'Query' || k == 'Mutation');
 
-    return GqlCacheView(
-      cacheMap: cacheMap,
-      queryMap: queryMap,
-      mutationMap: mutationMap,
+    return GqlCacheMaps(
+      normalized: normalized,
+      query: query,
+      mutation: mutation,
     );
   }
 
-  final GqlCacheMap cacheMap;
-  final GqlCacheMap queryMap;
-  final GqlCacheMap mutationMap;
+  final Map<String, dynamic> normalized;
+  final Map<String, dynamic> query;
+  final Map<String, dynamic> mutation;
 
-  GqlCacheMap operator [](GqlCacheCategory category) {
+  Map<String, dynamic> operator [](GqlCacheCategory category) {
     return switch (category) {
-      GqlCacheCategory.cache => cacheMap,
-      GqlCacheCategory.query => queryMap,
-      GqlCacheCategory.mutation => mutationMap,
+      GqlCacheCategory.normalized => normalized,
+      GqlCacheCategory.query => query,
+      GqlCacheCategory.mutation => mutation,
     };
   }
 }

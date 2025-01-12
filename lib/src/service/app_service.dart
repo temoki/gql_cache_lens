@@ -1,14 +1,19 @@
 import 'package:devtools_extensions/devtools_extensions.dart';
+import 'package:flutter/widgets.dart';
 
 import 'gql_cache.dart';
 
-final class AppService {
-  const AppService._();
+final class AppService extends ChangeNotifier {
+  GqlCacheMaps get gqlCache => _gqlCache;
 
-  static Future<GqlCacheView> requestGqlCache() async {
-    final response = await serviceManager
-        .callServiceExtensionOnMainIsolate('ext.gql_cache_lens.load');
+  GqlCacheMaps _gqlCache = const GqlCacheMaps();
+
+  Future<void> requestGqlCache() async {
+    const method = 'ext.gql_cache_lens.load';
+    final response =
+        await serviceManager.callServiceExtensionOnMainIsolate(method);
     final json = response.json ?? {};
-    return GqlCacheView.fromGraphQLFlutter(json);
+    _gqlCache = GqlCacheMaps.fromJson(json);
+    notifyListeners();
   }
 }

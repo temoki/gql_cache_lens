@@ -7,6 +7,7 @@
         {
             "name": "gql_cache_lens + simulated environment",
             "request": "launch",
+            "program": "lib/main.dart",
             "type": "dart",
             "toolArgs": [
                 "--dart-define", "use_simulated_environment=true"
@@ -16,6 +17,7 @@
             "name": "example app (debug)",
             "cwd": "example",
             "request": "launch",
+            "program": "lib/main.dart",
             "type": "dart",
             "args": [
                 "--debug",

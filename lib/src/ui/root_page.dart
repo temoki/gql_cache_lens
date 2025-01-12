@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../service/app_service.dart';
 import '../service/gql_cache.dart';
+import 'app_service_provider.dart';
 import 'object_page.dart';
 
 final class RootPage extends StatefulWidget {
@@ -17,7 +17,6 @@ final class _RootState extends State<RootPage>
   _RootState();
 
   late final TabController _tabController;
-  GqlCacheView _cache = const GqlCacheView();
 
   @override
   void initState() {
@@ -25,12 +24,18 @@ final class _RootState extends State<RootPage>
       length: GqlCacheCategory.values.length,
       vsync: this,
     );
-    load();
     super.initState();
   }
 
   @override
+  void didChangeDependencies() {
+    AppServiceProvider.of(context).requestGqlCache();
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final appService = AppServiceProvider.of(context);
     return Scaffold(
       appBar: AppBar(
         title: const Row(
@@ -46,7 +51,7 @@ final class _RootState extends State<RootPage>
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
-            onPressed: load,
+            onPressed: appService.requestGqlCache,
           ),
         ],
         bottom: TabBar(
@@ -57,39 +62,33 @@ final class _RootState extends State<RootPage>
               .toList(),
         ),
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: GqlCacheCategory.values
-            .map(
-              (category) => _CacheMapView(
-                _cache[category],
-                _cache[GqlCacheCategory.cache],
-              ),
-            )
-            .toList(),
+      body: ListenableBuilder(
+        listenable: appService,
+        builder: (_, __) {
+          final gqlCache = appService.gqlCache;
+          return TabBarView(
+            controller: _tabController,
+            children: GqlCacheCategory.values
+                .map((category) => _CacheMapView(gqlCache[category]))
+                .toList(),
+          );
+        },
       ),
-    );
-  }
-
-  void load() {
-    AppService.requestGqlCache().then(
-      (cache) => setState(() => _cache = cache),
     );
   }
 }
 
 extension on GqlCacheCategory {
   String get title => switch (this) {
-        GqlCacheCategory.cache => 'Cache',
+        GqlCacheCategory.normalized => 'Cache',
         GqlCacheCategory.query => 'Query',
         GqlCacheCategory.mutation => 'Mutation',
       };
 }
 
 final class _CacheMapView extends StatelessWidget {
-  const _CacheMapView(this.cacheMap, this.normalizedCacheMap);
+  const _CacheMapView(this.cacheMap);
 
-  final Map<String, dynamic> normalizedCacheMap;
   final Map<String, dynamic> cacheMap;
 
   @override
@@ -109,7 +108,6 @@ final class _CacheMapView extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute<ObjectPage>(
                 builder: (_) => ObjectPage(
-                  normalizedCacheMap: normalizedCacheMap,
                   dataId: dataId,
                   object: object,
                 ),
