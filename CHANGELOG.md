@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.8.0] - 2025-01-12
+### Changed
+- Internal refactoring.
+
 ## [0.7.0] - 2025-01-11
 ### Added
 - Added CHANGELOG.md.
