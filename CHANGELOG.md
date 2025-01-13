@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.9.0] - 2025-01-13
+### Changed
+- Downgraded the minimum version of `devtools_extensions` to 0.2.2.
+ 
 ## [0.8.0] - 2025-01-12
 ### Changed
 - Internal refactoring.
@@ -9,7 +13,7 @@
 - Added CHANGELOG.md.
 
 ### Changed
-- Updated `devtools_extensions` to the latest versions.
+- Upgraded the minimum version of `devtools_extensions` to 0.3.0.
 - Updated to improve PUB POINTS.
 
 ## [0.6.1] - 2024-12-30
