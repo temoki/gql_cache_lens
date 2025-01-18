@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.0] - 2025-01-18
+### Fixed
+- Fix publishing issue. [#10](https://github.com/temoki/gql_cache_lens/issues/10)
+
 ## [0.9.0] - 2025-01-13
 ### Changed
 - Downgraded the minimum version of `devtools_extensions` to 0.2.2.
