@@ -6,7 +6,7 @@ part of 'issues.query.req.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GIssuesReq> _$gIssuesReqSerializer = new _$GIssuesReqSerializer();
+Serializer<GIssuesReq> _$gIssuesReqSerializer = _$GIssuesReqSerializer();
 
 class _$GIssuesReqSerializer implements StructuredSerializer<GIssuesReq> {
   @override
@@ -15,63 +15,91 @@ class _$GIssuesReqSerializer implements StructuredSerializer<GIssuesReq> {
   final String wireName = 'GIssuesReq';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GIssuesReq object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GIssuesReq object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       'vars',
-      serializers.serialize(object.vars,
-          specifiedType: const FullType(_i3.GIssuesVars)),
+      serializers.serialize(
+        object.vars,
+        specifiedType: const FullType(_i3.GIssuesVars),
+      ),
       'operation',
-      serializers.serialize(object.operation,
-          specifiedType: const FullType(_i4.Operation)),
+      serializers.serialize(
+        object.operation,
+        specifiedType: const FullType(_i4.Operation),
+      ),
       'executeOnListen',
-      serializers.serialize(object.executeOnListen,
-          specifiedType: const FullType(bool)),
+      serializers.serialize(
+        object.executeOnListen,
+        specifiedType: const FullType(bool),
+      ),
     ];
     Object? value;
     value = object.requestId;
     if (value != null) {
       result
         ..add('requestId')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(
+          serializers.serialize(value, specifiedType: const FullType(String)),
+        );
     }
     value = object.optimisticResponse;
     if (value != null) {
       result
         ..add('optimisticResponse')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GIssuesData)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(_i2.GIssuesData),
+          ),
+        );
     }
     value = object.updateCacheHandlerKey;
     if (value != null) {
       result
         ..add('updateCacheHandlerKey')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(
+          serializers.serialize(value, specifiedType: const FullType(String)),
+        );
     }
     value = object.updateCacheHandlerContext;
     if (value != null) {
       result
         ..add('updateCacheHandlerContext')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                Map, const [const FullType(String), const FullType(dynamic)])));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(Map, const [
+              const FullType(String),
+              const FullType(dynamic),
+            ]),
+          ),
+        );
     }
     value = object.fetchPolicy;
     if (value != null) {
       result
         ..add('fetchPolicy')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i1.FetchPolicy)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(_i1.FetchPolicy),
+          ),
+        );
     }
     return result;
   }
 
   @override
-  GIssuesReq deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesReqBuilder();
+  GIssuesReq deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -80,42 +108,73 @@ class _$GIssuesReqSerializer implements StructuredSerializer<GIssuesReq> {
       final Object? value = iterator.current;
       switch (key) {
         case 'vars':
-          result.vars.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GIssuesVars))!
-              as _i3.GIssuesVars);
+          result.vars.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(_i3.GIssuesVars),
+                )!
+                as _i3.GIssuesVars,
+          );
           break;
         case 'operation':
-          result.operation = serializers.deserialize(value,
-              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          result.operation =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(_i4.Operation),
+                  )!
+                  as _i4.Operation;
           break;
         case 'requestId':
-          result.requestId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.requestId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String?;
           break;
         case 'optimisticResponse':
-          result.optimisticResponse.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GIssuesData))!
-              as _i2.GIssuesData);
+          result.optimisticResponse.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(_i2.GIssuesData),
+                )!
+                as _i2.GIssuesData,
+          );
           break;
         case 'updateCacheHandlerKey':
-          result.updateCacheHandlerKey = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.updateCacheHandlerKey =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String?;
           break;
         case 'updateCacheHandlerContext':
-          result.updateCacheHandlerContext = serializers.deserialize(value,
-              specifiedType: const FullType(Map, const [
-                const FullType(String),
-                const FullType(dynamic)
-              ])) as Map<String, dynamic>?;
+          result.updateCacheHandlerContext =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Map, const [
+                      const FullType(String),
+                      const FullType(dynamic),
+                    ]),
+                  )
+                  as Map<String, dynamic>?;
           break;
         case 'fetchPolicy':
-          result.fetchPolicy = serializers.deserialize(value,
-                  specifiedType: const FullType(_i1.FetchPolicy))
-              as _i1.FetchPolicy?;
+          result.fetchPolicy =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(_i1.FetchPolicy),
+                  )
+                  as _i1.FetchPolicy?;
           break;
         case 'executeOnListen':
-          result.executeOnListen = serializers.deserialize(value,
-              specifiedType: const FullType(bool))! as bool;
+          result.executeOnListen =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )!
+                  as bool;
           break;
       }
     }
@@ -133,7 +192,7 @@ class _$GIssuesReq extends GIssuesReq {
   final String? requestId;
   @override
   final _i2.GIssuesData? Function(_i2.GIssuesData?, _i2.GIssuesData?)?
-      updateResult;
+  updateResult;
   @override
   final _i2.GIssuesData? optimisticResponse;
   @override
@@ -144,34 +203,30 @@ class _$GIssuesReq extends GIssuesReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GIssuesReq([void Function(GIssuesReqBuilder)? updates]) =>
-      (new GIssuesReqBuilder()..update(updates))._build();
+      (GIssuesReqBuilder()..update(updates))._build();
 
-  _$GIssuesReq._(
-      {required this.vars,
-      required this.operation,
-      this.requestId,
-      this.updateResult,
-      this.optimisticResponse,
-      this.updateCacheHandlerKey,
-      this.updateCacheHandlerContext,
-      this.fetchPolicy,
-      required this.executeOnListen})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GIssuesReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GIssuesReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GIssuesReq', 'executeOnListen');
-  }
-
+  _$GIssuesReq._({
+    required this.vars,
+    required this.operation,
+    this.requestId,
+    this.updateResult,
+    this.optimisticResponse,
+    this.updateCacheHandlerKey,
+    this.updateCacheHandlerContext,
+    this.fetchPolicy,
+    required this.executeOnListen,
+    this.context,
+  }) : super._();
   @override
   GIssuesReq rebuild(void Function(GIssuesReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GIssuesReqBuilder toBuilder() => new GIssuesReqBuilder()..replace(this);
+  GIssuesReqBuilder toBuilder() => GIssuesReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -186,7 +241,8 @@ class _$GIssuesReq extends GIssuesReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -201,6 +257,7 @@ class _$GIssuesReq extends GIssuesReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -216,7 +273,8 @@ class _$GIssuesReq extends GIssuesReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -225,8 +283,7 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
   _$GIssuesReq? _$v;
 
   _i3.GIssuesVarsBuilder? _vars;
-  _i3.GIssuesVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GIssuesVarsBuilder();
+  _i3.GIssuesVarsBuilder get vars => _$this._vars ??= _i3.GIssuesVarsBuilder();
   set vars(_i3.GIssuesVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -239,15 +296,14 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
 
   _i2.GIssuesData? Function(_i2.GIssuesData?, _i2.GIssuesData?)? _updateResult;
   _i2.GIssuesData? Function(_i2.GIssuesData?, _i2.GIssuesData?)?
-      get updateResult => _$this._updateResult;
+  get updateResult => _$this._updateResult;
   set updateResult(
-          _i2.GIssuesData? Function(_i2.GIssuesData?, _i2.GIssuesData?)?
-              updateResult) =>
-      _$this._updateResult = updateResult;
+    _i2.GIssuesData? Function(_i2.GIssuesData?, _i2.GIssuesData?)? updateResult,
+  ) => _$this._updateResult = updateResult;
 
   _i2.GIssuesDataBuilder? _optimisticResponse;
   _i2.GIssuesDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GIssuesDataBuilder();
+      _$this._optimisticResponse ??= _i2.GIssuesDataBuilder();
   set optimisticResponse(_i2.GIssuesDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -260,8 +316,8 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
   Map<String, dynamic>? get updateCacheHandlerContext =>
       _$this._updateCacheHandlerContext;
   set updateCacheHandlerContext(
-          Map<String, dynamic>? updateCacheHandlerContext) =>
-      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+    Map<String, dynamic>? updateCacheHandlerContext,
+  ) => _$this._updateCacheHandlerContext = updateCacheHandlerContext;
 
   _i1.FetchPolicy? _fetchPolicy;
   _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
@@ -272,6 +328,10 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
   bool? get executeOnListen => _$this._executeOnListen;
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
 
   GIssuesReqBuilder() {
     GIssuesReq._initializeBuilder(this);
@@ -289,6 +349,7 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -296,7 +357,6 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
 
   @override
   void replace(GIssuesReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesReq;
   }
 
@@ -311,11 +371,15 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
   _$GIssuesReq _build() {
     _$GIssuesReq _$result;
     try {
-      _$result = _$v ??
-          new _$GIssuesReq._(
+      _$result =
+          _$v ??
+          _$GIssuesReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
-                operation, r'GIssuesReq', 'operation'),
+              operation,
+              r'GIssuesReq',
+              'operation',
+            ),
             requestId: requestId,
             updateResult: updateResult,
             optimisticResponse: _optimisticResponse?.build(),
@@ -323,7 +387,11 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
             updateCacheHandlerContext: updateCacheHandlerContext,
             fetchPolicy: fetchPolicy,
             executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                executeOnListen, r'GIssuesReq', 'executeOnListen'),
+              executeOnListen,
+              r'GIssuesReq',
+              'executeOnListen',
+            ),
+            context: context,
           );
     } catch (_) {
       late String _$failedField;
@@ -334,8 +402,11 @@ class GIssuesReqBuilder implements Builder<GIssuesReq, GIssuesReqBuilder> {
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GIssuesReq', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GIssuesReq',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

@@ -7,12 +7,12 @@ part of 'new_issue.mutation.data.gql.dart';
 // **************************************************************************
 
 Serializer<GNewIssueData> _$gNewIssueDataSerializer =
-    new _$GNewIssueDataSerializer();
+    _$GNewIssueDataSerializer();
 Serializer<GNewIssueData_createIssue> _$gNewIssueDataCreateIssueSerializer =
-    new _$GNewIssueData_createIssueSerializer();
+    _$GNewIssueData_createIssueSerializer();
 Serializer<GNewIssueData_createIssue_issue>
-    _$gNewIssueDataCreateIssueIssueSerializer =
-    new _$GNewIssueData_createIssue_issueSerializer();
+_$gNewIssueDataCreateIssueIssueSerializer =
+    _$GNewIssueData_createIssue_issueSerializer();
 
 class _$GNewIssueDataSerializer implements StructuredSerializer<GNewIssueData> {
   @override
@@ -21,29 +21,40 @@ class _$GNewIssueDataSerializer implements StructuredSerializer<GNewIssueData> {
   final String wireName = 'GNewIssueData';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GNewIssueData object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GNewIssueData object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
     ];
     Object? value;
     value = object.createIssue;
     if (value != null) {
       result
         ..add('createIssue')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GNewIssueData_createIssue)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(GNewIssueData_createIssue),
+          ),
+        );
     }
     return result;
   }
 
   @override
   GNewIssueData deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GNewIssueDataBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GNewIssueDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -52,13 +63,21 @@ class _$GNewIssueDataSerializer implements StructuredSerializer<GNewIssueData> {
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'createIssue':
-          result.createIssue.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GNewIssueData_createIssue))!
-              as GNewIssueData_createIssue);
+          result.createIssue.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(GNewIssueData_createIssue),
+                )!
+                as GNewIssueData_createIssue,
+          );
           break;
       }
     }
@@ -72,36 +91,46 @@ class _$GNewIssueData_createIssueSerializer
   @override
   final Iterable<Type> types = const [
     GNewIssueData_createIssue,
-    _$GNewIssueData_createIssue
+    _$GNewIssueData_createIssue,
   ];
   @override
   final String wireName = 'GNewIssueData_createIssue';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GNewIssueData_createIssue object,
-      {FullType specifiedType = FullType.unspecified}) {
+    Serializers serializers,
+    GNewIssueData_createIssue object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
     ];
     Object? value;
     value = object.issue;
     if (value != null) {
       result
         ..add('issue')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GNewIssueData_createIssue_issue)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(GNewIssueData_createIssue_issue),
+          ),
+        );
     }
     return result;
   }
 
   @override
   GNewIssueData_createIssue deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GNewIssueData_createIssueBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GNewIssueData_createIssueBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -110,14 +139,23 @@ class _$GNewIssueData_createIssueSerializer
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'issue':
-          result.issue.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(GNewIssueData_createIssue_issue))!
-              as GNewIssueData_createIssue_issue);
+          result.issue.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(
+                    GNewIssueData_createIssue_issue,
+                  ),
+                )!
+                as GNewIssueData_createIssue_issue,
+          );
           break;
       }
     }
@@ -131,19 +169,23 @@ class _$GNewIssueData_createIssue_issueSerializer
   @override
   final Iterable<Type> types = const [
     GNewIssueData_createIssue_issue,
-    _$GNewIssueData_createIssue_issue
+    _$GNewIssueData_createIssue_issue,
   ];
   @override
   final String wireName = 'GNewIssueData_createIssue_issue';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GNewIssueData_createIssue_issue object,
-      {FullType specifiedType = FullType.unspecified}) {
+    Serializers serializers,
+    GNewIssueData_createIssue_issue object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
@@ -153,9 +195,11 @@ class _$GNewIssueData_createIssue_issueSerializer
 
   @override
   GNewIssueData_createIssue_issue deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GNewIssueData_createIssue_issueBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GNewIssueData_createIssue_issueBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -164,12 +208,20 @@ class _$GNewIssueData_createIssue_issueSerializer
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
       }
     }
@@ -185,19 +237,15 @@ class _$GNewIssueData extends GNewIssueData {
   final GNewIssueData_createIssue? createIssue;
 
   factory _$GNewIssueData([void Function(GNewIssueDataBuilder)? updates]) =>
-      (new GNewIssueDataBuilder()..update(updates))._build();
+      (GNewIssueDataBuilder()..update(updates))._build();
 
-  _$GNewIssueData._({required this.G__typename, this.createIssue}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GNewIssueData', 'G__typename');
-  }
-
+  _$GNewIssueData._({required this.G__typename, this.createIssue}) : super._();
   @override
   GNewIssueData rebuild(void Function(GNewIssueDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GNewIssueDataBuilder toBuilder() => new GNewIssueDataBuilder()..replace(this);
+  GNewIssueDataBuilder toBuilder() => GNewIssueDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -235,7 +283,7 @@ class GNewIssueDataBuilder
 
   GNewIssueData_createIssueBuilder? _createIssue;
   GNewIssueData_createIssueBuilder get createIssue =>
-      _$this._createIssue ??= new GNewIssueData_createIssueBuilder();
+      _$this._createIssue ??= GNewIssueData_createIssueBuilder();
   set createIssue(GNewIssueData_createIssueBuilder? createIssue) =>
       _$this._createIssue = createIssue;
 
@@ -255,7 +303,6 @@ class GNewIssueDataBuilder
 
   @override
   void replace(GNewIssueData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GNewIssueData;
   }
 
@@ -270,10 +317,14 @@ class GNewIssueDataBuilder
   _$GNewIssueData _build() {
     _$GNewIssueData _$result;
     try {
-      _$result = _$v ??
-          new _$GNewIssueData._(
+      _$result =
+          _$v ??
+          _$GNewIssueData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GNewIssueData', 'G__typename'),
+              G__typename,
+              r'GNewIssueData',
+              'G__typename',
+            ),
             createIssue: _createIssue?.build(),
           );
     } catch (_) {
@@ -282,8 +333,11 @@ class GNewIssueDataBuilder
         _$failedField = 'createIssue';
         _createIssue?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GNewIssueData', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GNewIssueData',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
@@ -298,24 +352,20 @@ class _$GNewIssueData_createIssue extends GNewIssueData_createIssue {
   @override
   final GNewIssueData_createIssue_issue? issue;
 
-  factory _$GNewIssueData_createIssue(
-          [void Function(GNewIssueData_createIssueBuilder)? updates]) =>
-      (new GNewIssueData_createIssueBuilder()..update(updates))._build();
+  factory _$GNewIssueData_createIssue([
+    void Function(GNewIssueData_createIssueBuilder)? updates,
+  ]) => (GNewIssueData_createIssueBuilder()..update(updates))._build();
 
   _$GNewIssueData_createIssue._({required this.G__typename, this.issue})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GNewIssueData_createIssue', 'G__typename');
-  }
-
+    : super._();
   @override
   GNewIssueData_createIssue rebuild(
-          void Function(GNewIssueData_createIssueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GNewIssueData_createIssueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GNewIssueData_createIssueBuilder toBuilder() =>
-      new GNewIssueData_createIssueBuilder()..replace(this);
+      GNewIssueData_createIssueBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -354,7 +404,7 @@ class GNewIssueData_createIssueBuilder
 
   GNewIssueData_createIssue_issueBuilder? _issue;
   GNewIssueData_createIssue_issueBuilder get issue =>
-      _$this._issue ??= new GNewIssueData_createIssue_issueBuilder();
+      _$this._issue ??= GNewIssueData_createIssue_issueBuilder();
   set issue(GNewIssueData_createIssue_issueBuilder? issue) =>
       _$this._issue = issue;
 
@@ -374,7 +424,6 @@ class GNewIssueData_createIssueBuilder
 
   @override
   void replace(GNewIssueData_createIssue other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GNewIssueData_createIssue;
   }
 
@@ -389,10 +438,14 @@ class GNewIssueData_createIssueBuilder
   _$GNewIssueData_createIssue _build() {
     _$GNewIssueData_createIssue _$result;
     try {
-      _$result = _$v ??
-          new _$GNewIssueData_createIssue._(
+      _$result =
+          _$v ??
+          _$GNewIssueData_createIssue._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GNewIssueData_createIssue', 'G__typename'),
+              G__typename,
+              r'GNewIssueData_createIssue',
+              'G__typename',
+            ),
             issue: _issue?.build(),
           );
     } catch (_) {
@@ -401,8 +454,11 @@ class GNewIssueData_createIssueBuilder
         _$failedField = 'issue';
         _issue?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GNewIssueData_createIssue', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GNewIssueData_createIssue',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
@@ -418,27 +474,22 @@ class _$GNewIssueData_createIssue_issue
   @override
   final String id;
 
-  factory _$GNewIssueData_createIssue_issue(
-          [void Function(GNewIssueData_createIssue_issueBuilder)? updates]) =>
-      (new GNewIssueData_createIssue_issueBuilder()..update(updates))._build();
+  factory _$GNewIssueData_createIssue_issue([
+    void Function(GNewIssueData_createIssue_issueBuilder)? updates,
+  ]) => (GNewIssueData_createIssue_issueBuilder()..update(updates))._build();
 
-  _$GNewIssueData_createIssue_issue._(
-      {required this.G__typename, required this.id})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GNewIssueData_createIssue_issue', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GNewIssueData_createIssue_issue', 'id');
-  }
-
+  _$GNewIssueData_createIssue_issue._({
+    required this.G__typename,
+    required this.id,
+  }) : super._();
   @override
   GNewIssueData_createIssue_issue rebuild(
-          void Function(GNewIssueData_createIssue_issueBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GNewIssueData_createIssue_issueBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GNewIssueData_createIssue_issueBuilder toBuilder() =>
-      new GNewIssueData_createIssue_issueBuilder()..replace(this);
+      GNewIssueData_createIssue_issueBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -468,8 +519,10 @@ class _$GNewIssueData_createIssue_issue
 
 class GNewIssueData_createIssue_issueBuilder
     implements
-        Builder<GNewIssueData_createIssue_issue,
-            GNewIssueData_createIssue_issueBuilder> {
+        Builder<
+          GNewIssueData_createIssue_issue,
+          GNewIssueData_createIssue_issueBuilder
+        > {
   _$GNewIssueData_createIssue_issue? _$v;
 
   String? _G__typename;
@@ -496,7 +549,6 @@ class GNewIssueData_createIssue_issueBuilder
 
   @override
   void replace(GNewIssueData_createIssue_issue other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GNewIssueData_createIssue_issue;
   }
 
@@ -509,12 +561,19 @@ class GNewIssueData_createIssue_issueBuilder
   GNewIssueData_createIssue_issue build() => _build();
 
   _$GNewIssueData_createIssue_issue _build() {
-    final _$result = _$v ??
-        new _$GNewIssueData_createIssue_issue._(
+    final _$result =
+        _$v ??
+        _$GNewIssueData_createIssue_issue._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename, r'GNewIssueData_createIssue_issue', 'G__typename'),
+            G__typename,
+            r'GNewIssueData_createIssue_issue',
+            'G__typename',
+          ),
           id: BuiltValueNullFieldError.checkNotNull(
-              id, r'GNewIssueData_createIssue_issue', 'id'),
+            id,
+            r'GNewIssueData_createIssue_issue',
+            'id',
+          ),
         );
     replace(_$result);
     return _$result;

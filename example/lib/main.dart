@@ -36,7 +36,7 @@ UiFactory _createGraphqlFactory() {
   );
 
   if (kDebugMode) {
-    registerExtension('ext.gql_cache_lens.load', (_, __) async {
+    registerExtension('ext.gql_cache_lens.load', (_, _) async {
       final graphql.GraphQLClient client = factory.client;
       final graphql.GraphQLCache cache = client.cache;
       final graphql.Store store = cache.store;
@@ -58,7 +58,7 @@ UiFactory _createFerryFactory() {
   );
 
   if (kDebugMode) {
-    registerExtension('ext.gql_cache_lens.load', (_, __) async {
+    registerExtension('ext.gql_cache_lens.load', (_, _) async {
       final ferry.Client client = factory.client;
       final ferry.Cache cache = client.cache;
       final ferry.Store store = cache.store;

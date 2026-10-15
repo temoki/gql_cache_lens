@@ -59,7 +59,7 @@ final class IssuesPageTemplate extends StatelessWidget {
         itemCount: issues.length + 1,
         itemBuilder: (_, index) =>
             index == issues.length ? listItemEnd : _IssueTile(issues[index]),
-        separatorBuilder: (_, __) => const Divider(
+        separatorBuilder: (_, _) => const Divider(
           height: 1,
           thickness: 1,
         ),

@@ -6,21 +6,21 @@ part of 'issues.query.data.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GIssuesData> _$gIssuesDataSerializer = new _$GIssuesDataSerializer();
+Serializer<GIssuesData> _$gIssuesDataSerializer = _$GIssuesDataSerializer();
 Serializer<GIssuesData_repository> _$gIssuesDataRepositorySerializer =
-    new _$GIssuesData_repositorySerializer();
+    _$GIssuesData_repositorySerializer();
 Serializer<GIssuesData_repository_issues>
-    _$gIssuesDataRepositoryIssuesSerializer =
-    new _$GIssuesData_repository_issuesSerializer();
+_$gIssuesDataRepositoryIssuesSerializer =
+    _$GIssuesData_repository_issuesSerializer();
 Serializer<GIssuesData_repository_issues_edges>
-    _$gIssuesDataRepositoryIssuesEdgesSerializer =
-    new _$GIssuesData_repository_issues_edgesSerializer();
+_$gIssuesDataRepositoryIssuesEdgesSerializer =
+    _$GIssuesData_repository_issues_edgesSerializer();
 Serializer<GIssuesData_repository_issues_edges_node>
-    _$gIssuesDataRepositoryIssuesEdgesNodeSerializer =
-    new _$GIssuesData_repository_issues_edges_nodeSerializer();
+_$gIssuesDataRepositoryIssuesEdgesNodeSerializer =
+    _$GIssuesData_repository_issues_edges_nodeSerializer();
 Serializer<GIssuesData_repository_issues_edges_node_author>
-    _$gIssuesDataRepositoryIssuesEdgesNodeAuthorSerializer =
-    new _$GIssuesData_repository_issues_edges_node_authorSerializer();
+_$gIssuesDataRepositoryIssuesEdgesNodeAuthorSerializer =
+    _$GIssuesData_repository_issues_edges_node_authorSerializer();
 
 class _$GIssuesDataSerializer implements StructuredSerializer<GIssuesData> {
   @override
@@ -29,28 +29,40 @@ class _$GIssuesDataSerializer implements StructuredSerializer<GIssuesData> {
   final String wireName = 'GIssuesData';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GIssuesData object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GIssuesData object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
     ];
     Object? value;
     value = object.repository;
     if (value != null) {
       result
         ..add('repository')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GIssuesData_repository)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(GIssuesData_repository),
+          ),
+        );
     }
     return result;
   }
 
   @override
-  GIssuesData deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesDataBuilder();
+  GIssuesData deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -59,13 +71,21 @@ class _$GIssuesDataSerializer implements StructuredSerializer<GIssuesData> {
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'repository':
-          result.repository.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GIssuesData_repository))!
-              as GIssuesData_repository);
+          result.repository.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(GIssuesData_repository),
+                )!
+                as GIssuesData_repository,
+          );
           break;
       }
     }
@@ -79,24 +99,30 @@ class _$GIssuesData_repositorySerializer
   @override
   final Iterable<Type> types = const [
     GIssuesData_repository,
-    _$GIssuesData_repository
+    _$GIssuesData_repository,
   ];
   @override
   final String wireName = 'GIssuesData_repository';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GIssuesData_repository object,
-      {FullType specifiedType = FullType.unspecified}) {
+    Serializers serializers,
+    GIssuesData_repository object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'issues',
-      serializers.serialize(object.issues,
-          specifiedType: const FullType(GIssuesData_repository_issues)),
+      serializers.serialize(
+        object.issues,
+        specifiedType: const FullType(GIssuesData_repository_issues),
+      ),
     ];
 
     return result;
@@ -104,9 +130,11 @@ class _$GIssuesData_repositorySerializer
 
   @override
   GIssuesData_repository deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesData_repositoryBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesData_repositoryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -115,17 +143,29 @@ class _$GIssuesData_repositorySerializer
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'issues':
-          result.issues.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GIssuesData_repository_issues))!
-              as GIssuesData_repository_issues);
+          result.issues.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(GIssuesData_repository_issues),
+                )!
+                as GIssuesData_repository_issues,
+          );
           break;
       }
     }
@@ -139,38 +179,48 @@ class _$GIssuesData_repository_issuesSerializer
   @override
   final Iterable<Type> types = const [
     GIssuesData_repository_issues,
-    _$GIssuesData_repository_issues
+    _$GIssuesData_repository_issues,
   ];
   @override
   final String wireName = 'GIssuesData_repository_issues';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GIssuesData_repository_issues object,
-      {FullType specifiedType = FullType.unspecified}) {
+    Serializers serializers,
+    GIssuesData_repository_issues object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
     ];
     Object? value;
     value = object.edges;
     if (value != null) {
       result
         ..add('edges')
-        ..add(serializers.serialize(value,
+        ..add(
+          serializers.serialize(
+            value,
             specifiedType: const FullType(BuiltList, const [
-              const FullType.nullable(GIssuesData_repository_issues_edges)
-            ])));
+              const FullType.nullable(GIssuesData_repository_issues_edges),
+            ]),
+          ),
+        );
     }
     return result;
   }
 
   @override
   GIssuesData_repository_issues deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesData_repository_issuesBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesData_repository_issuesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -179,14 +229,25 @@ class _$GIssuesData_repository_issuesSerializer
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'edges':
-          result.edges.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType.nullable(GIssuesData_repository_issues_edges)
-              ]))! as BuiltList<Object?>);
+          result.edges.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(BuiltList, const [
+                    const FullType.nullable(
+                      GIssuesData_repository_issues_edges,
+                    ),
+                  ]),
+                )!
+                as BuiltList<Object?>,
+          );
           break;
       }
     }
@@ -200,37 +261,48 @@ class _$GIssuesData_repository_issues_edgesSerializer
   @override
   final Iterable<Type> types = const [
     GIssuesData_repository_issues_edges,
-    _$GIssuesData_repository_issues_edges
+    _$GIssuesData_repository_issues_edges,
   ];
   @override
   final String wireName = 'GIssuesData_repository_issues_edges';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GIssuesData_repository_issues_edges object,
-      {FullType specifiedType = FullType.unspecified}) {
+    Serializers serializers,
+    GIssuesData_repository_issues_edges object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
     ];
     Object? value;
     value = object.node;
     if (value != null) {
       result
         ..add('node')
-        ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(GIssuesData_repository_issues_edges_node)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(
+              GIssuesData_repository_issues_edges_node,
+            ),
+          ),
+        );
     }
     return result;
   }
 
   @override
   GIssuesData_repository_issues_edges deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesData_repository_issues_edgesBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesData_repository_issues_edgesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -239,14 +311,23 @@ class _$GIssuesData_repository_issues_edgesSerializer
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'node':
-          result.node.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(GIssuesData_repository_issues_edges_node))!
-              as GIssuesData_repository_issues_edges_node);
+          result.node.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(
+                    GIssuesData_repository_issues_edges_node,
+                  ),
+                )!
+                as GIssuesData_repository_issues_edges_node,
+          );
           break;
       }
     }
@@ -260,47 +341,62 @@ class _$GIssuesData_repository_issues_edges_nodeSerializer
   @override
   final Iterable<Type> types = const [
     GIssuesData_repository_issues_edges_node,
-    _$GIssuesData_repository_issues_edges_node
+    _$GIssuesData_repository_issues_edges_node,
   ];
   @override
   final String wireName = 'GIssuesData_repository_issues_edges_node';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GIssuesData_repository_issues_edges_node object,
-      {FullType specifiedType = FullType.unspecified}) {
+    Serializers serializers,
+    GIssuesData_repository_issues_edges_node object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'number',
       serializers.serialize(object.number, specifiedType: const FullType(int)),
       'title',
-      serializers.serialize(object.title,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.title,
+        specifiedType: const FullType(String),
+      ),
       'createdAt',
-      serializers.serialize(object.createdAt,
-          specifiedType: const FullType(_i2.GDateTime)),
+      serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(_i2.GDateTime),
+      ),
     ];
     Object? value;
     value = object.author;
     if (value != null) {
       result
         ..add('author')
-        ..add(serializers.serialize(value,
+        ..add(
+          serializers.serialize(
+            value,
             specifiedType: const FullType(
-                GIssuesData_repository_issues_edges_node_author)));
+              GIssuesData_repository_issues_edges_node_author,
+            ),
+          ),
+        );
     }
     return result;
   }
 
   @override
   GIssuesData_repository_issues_edges_node deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesData_repository_issues_edges_nodeBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesData_repository_issues_edges_nodeBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -309,30 +405,56 @@ class _$GIssuesData_repository_issues_edges_nodeSerializer
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.id =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'number':
-          result.number = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
+          result.number =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(int),
+                  )!
+                  as int;
           break;
         case 'title':
-          result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.title =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'createdAt':
-          result.createdAt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i2.GDateTime))! as _i2.GDateTime);
+          result.createdAt.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(_i2.GDateTime),
+                )!
+                as _i2.GDateTime,
+          );
           break;
         case 'author':
-          result.author.replace(serializers.deserialize(value,
+          result.author.replace(
+            serializers.deserialize(
+                  value,
                   specifiedType: const FullType(
-                      GIssuesData_repository_issues_edges_node_author))!
-              as GIssuesData_repository_issues_edges_node_author);
+                    GIssuesData_repository_issues_edges_node_author,
+                  ),
+                )!
+                as GIssuesData_repository_issues_edges_node_author,
+          );
           break;
       }
     }
@@ -347,22 +469,28 @@ class _$GIssuesData_repository_issues_edges_node_authorSerializer
   @override
   final Iterable<Type> types = const [
     GIssuesData_repository_issues_edges_node_author,
-    _$GIssuesData_repository_issues_edges_node_author
+    _$GIssuesData_repository_issues_edges_node_author,
   ];
   @override
   final String wireName = 'GIssuesData_repository_issues_edges_node_author';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GIssuesData_repository_issues_edges_node_author object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GIssuesData_repository_issues_edges_node_author object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       '__typename',
-      serializers.serialize(object.G__typename,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.G__typename,
+        specifiedType: const FullType(String),
+      ),
       'login',
-      serializers.serialize(object.login,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.login,
+        specifiedType: const FullType(String),
+      ),
     ];
 
     return result;
@@ -370,9 +498,11 @@ class _$GIssuesData_repository_issues_edges_node_authorSerializer
 
   @override
   GIssuesData_repository_issues_edges_node_author deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesData_repository_issues_edges_node_authorBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesData_repository_issues_edges_node_authorBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -381,12 +511,20 @@ class _$GIssuesData_repository_issues_edges_node_authorSerializer
       final Object? value = iterator.current;
       switch (key) {
         case '__typename':
-          result.G__typename = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.G__typename =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'login':
-          result.login = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.login =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
       }
     }
@@ -402,19 +540,15 @@ class _$GIssuesData extends GIssuesData {
   final GIssuesData_repository? repository;
 
   factory _$GIssuesData([void Function(GIssuesDataBuilder)? updates]) =>
-      (new GIssuesDataBuilder()..update(updates))._build();
+      (GIssuesDataBuilder()..update(updates))._build();
 
-  _$GIssuesData._({required this.G__typename, this.repository}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GIssuesData', 'G__typename');
-  }
-
+  _$GIssuesData._({required this.G__typename, this.repository}) : super._();
   @override
   GIssuesData rebuild(void Function(GIssuesDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GIssuesDataBuilder toBuilder() => new GIssuesDataBuilder()..replace(this);
+  GIssuesDataBuilder toBuilder() => GIssuesDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -451,7 +585,7 @@ class GIssuesDataBuilder implements Builder<GIssuesData, GIssuesDataBuilder> {
 
   GIssuesData_repositoryBuilder? _repository;
   GIssuesData_repositoryBuilder get repository =>
-      _$this._repository ??= new GIssuesData_repositoryBuilder();
+      _$this._repository ??= GIssuesData_repositoryBuilder();
   set repository(GIssuesData_repositoryBuilder? repository) =>
       _$this._repository = repository;
 
@@ -471,7 +605,6 @@ class GIssuesDataBuilder implements Builder<GIssuesData, GIssuesDataBuilder> {
 
   @override
   void replace(GIssuesData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesData;
   }
 
@@ -486,10 +619,14 @@ class GIssuesDataBuilder implements Builder<GIssuesData, GIssuesDataBuilder> {
   _$GIssuesData _build() {
     _$GIssuesData _$result;
     try {
-      _$result = _$v ??
-          new _$GIssuesData._(
+      _$result =
+          _$v ??
+          _$GIssuesData._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GIssuesData', 'G__typename'),
+              G__typename,
+              r'GIssuesData',
+              'G__typename',
+            ),
             repository: _repository?.build(),
           );
     } catch (_) {
@@ -498,8 +635,11 @@ class GIssuesDataBuilder implements Builder<GIssuesData, GIssuesDataBuilder> {
         _$failedField = 'repository';
         _repository?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GIssuesData', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GIssuesData',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
@@ -516,28 +656,23 @@ class _$GIssuesData_repository extends GIssuesData_repository {
   @override
   final GIssuesData_repository_issues issues;
 
-  factory _$GIssuesData_repository(
-          [void Function(GIssuesData_repositoryBuilder)? updates]) =>
-      (new GIssuesData_repositoryBuilder()..update(updates))._build();
+  factory _$GIssuesData_repository([
+    void Function(GIssuesData_repositoryBuilder)? updates,
+  ]) => (GIssuesData_repositoryBuilder()..update(updates))._build();
 
-  _$GIssuesData_repository._(
-      {required this.G__typename, required this.id, required this.issues})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GIssuesData_repository', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(id, r'GIssuesData_repository', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        issues, r'GIssuesData_repository', 'issues');
-  }
-
+  _$GIssuesData_repository._({
+    required this.G__typename,
+    required this.id,
+    required this.issues,
+  }) : super._();
   @override
   GIssuesData_repository rebuild(
-          void Function(GIssuesData_repositoryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GIssuesData_repositoryBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GIssuesData_repositoryBuilder toBuilder() =>
-      new GIssuesData_repositoryBuilder()..replace(this);
+      GIssuesData_repositoryBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -582,7 +717,7 @@ class GIssuesData_repositoryBuilder
 
   GIssuesData_repository_issuesBuilder? _issues;
   GIssuesData_repository_issuesBuilder get issues =>
-      _$this._issues ??= new GIssuesData_repository_issuesBuilder();
+      _$this._issues ??= GIssuesData_repository_issuesBuilder();
   set issues(GIssuesData_repository_issuesBuilder? issues) =>
       _$this._issues = issues;
 
@@ -603,7 +738,6 @@ class GIssuesData_repositoryBuilder
 
   @override
   void replace(GIssuesData_repository other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesData_repository;
   }
 
@@ -618,12 +752,19 @@ class GIssuesData_repositoryBuilder
   _$GIssuesData_repository _build() {
     _$GIssuesData_repository _$result;
     try {
-      _$result = _$v ??
-          new _$GIssuesData_repository._(
+      _$result =
+          _$v ??
+          _$GIssuesData_repository._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GIssuesData_repository', 'G__typename'),
+              G__typename,
+              r'GIssuesData_repository',
+              'G__typename',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GIssuesData_repository', 'id'),
+              id,
+              r'GIssuesData_repository',
+              'id',
+            ),
             issues: issues.build(),
           );
     } catch (_) {
@@ -632,8 +773,11 @@ class GIssuesData_repositoryBuilder
         _$failedField = 'issues';
         issues.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GIssuesData_repository', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GIssuesData_repository',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
@@ -648,24 +792,20 @@ class _$GIssuesData_repository_issues extends GIssuesData_repository_issues {
   @override
   final BuiltList<GIssuesData_repository_issues_edges?>? edges;
 
-  factory _$GIssuesData_repository_issues(
-          [void Function(GIssuesData_repository_issuesBuilder)? updates]) =>
-      (new GIssuesData_repository_issuesBuilder()..update(updates))._build();
+  factory _$GIssuesData_repository_issues([
+    void Function(GIssuesData_repository_issuesBuilder)? updates,
+  ]) => (GIssuesData_repository_issuesBuilder()..update(updates))._build();
 
   _$GIssuesData_repository_issues._({required this.G__typename, this.edges})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GIssuesData_repository_issues', 'G__typename');
-  }
-
+    : super._();
   @override
   GIssuesData_repository_issues rebuild(
-          void Function(GIssuesData_repository_issuesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GIssuesData_repository_issuesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GIssuesData_repository_issuesBuilder toBuilder() =>
-      new GIssuesData_repository_issuesBuilder()..replace(this);
+      GIssuesData_repository_issuesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -695,8 +835,10 @@ class _$GIssuesData_repository_issues extends GIssuesData_repository_issues {
 
 class GIssuesData_repository_issuesBuilder
     implements
-        Builder<GIssuesData_repository_issues,
-            GIssuesData_repository_issuesBuilder> {
+        Builder<
+          GIssuesData_repository_issues,
+          GIssuesData_repository_issuesBuilder
+        > {
   _$GIssuesData_repository_issues? _$v;
 
   String? _G__typename;
@@ -705,7 +847,7 @@ class GIssuesData_repository_issuesBuilder
 
   ListBuilder<GIssuesData_repository_issues_edges?>? _edges;
   ListBuilder<GIssuesData_repository_issues_edges?> get edges =>
-      _$this._edges ??= new ListBuilder<GIssuesData_repository_issues_edges?>();
+      _$this._edges ??= ListBuilder<GIssuesData_repository_issues_edges?>();
   set edges(ListBuilder<GIssuesData_repository_issues_edges?>? edges) =>
       _$this._edges = edges;
 
@@ -725,7 +867,6 @@ class GIssuesData_repository_issuesBuilder
 
   @override
   void replace(GIssuesData_repository_issues other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesData_repository_issues;
   }
 
@@ -740,10 +881,14 @@ class GIssuesData_repository_issuesBuilder
   _$GIssuesData_repository_issues _build() {
     _$GIssuesData_repository_issues _$result;
     try {
-      _$result = _$v ??
-          new _$GIssuesData_repository_issues._(
+      _$result =
+          _$v ??
+          _$GIssuesData_repository_issues._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GIssuesData_repository_issues', 'G__typename'),
+              G__typename,
+              r'GIssuesData_repository_issues',
+              'G__typename',
+            ),
             edges: _edges?.build(),
           );
     } catch (_) {
@@ -752,8 +897,11 @@ class GIssuesData_repository_issuesBuilder
         _$failedField = 'edges';
         _edges?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GIssuesData_repository_issues', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GIssuesData_repository_issues',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
@@ -769,27 +917,23 @@ class _$GIssuesData_repository_issues_edges
   @override
   final GIssuesData_repository_issues_edges_node? node;
 
-  factory _$GIssuesData_repository_issues_edges(
-          [void Function(GIssuesData_repository_issues_edgesBuilder)?
-              updates]) =>
-      (new GIssuesData_repository_issues_edgesBuilder()..update(updates))
-          ._build();
+  factory _$GIssuesData_repository_issues_edges([
+    void Function(GIssuesData_repository_issues_edgesBuilder)? updates,
+  ]) =>
+      (GIssuesData_repository_issues_edgesBuilder()..update(updates))._build();
 
-  _$GIssuesData_repository_issues_edges._(
-      {required this.G__typename, this.node})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GIssuesData_repository_issues_edges', 'G__typename');
-  }
-
+  _$GIssuesData_repository_issues_edges._({
+    required this.G__typename,
+    this.node,
+  }) : super._();
   @override
   GIssuesData_repository_issues_edges rebuild(
-          void Function(GIssuesData_repository_issues_edgesBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GIssuesData_repository_issues_edgesBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GIssuesData_repository_issues_edgesBuilder toBuilder() =>
-      new GIssuesData_repository_issues_edgesBuilder()..replace(this);
+      GIssuesData_repository_issues_edgesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -819,8 +963,10 @@ class _$GIssuesData_repository_issues_edges
 
 class GIssuesData_repository_issues_edgesBuilder
     implements
-        Builder<GIssuesData_repository_issues_edges,
-            GIssuesData_repository_issues_edgesBuilder> {
+        Builder<
+          GIssuesData_repository_issues_edges,
+          GIssuesData_repository_issues_edgesBuilder
+        > {
   _$GIssuesData_repository_issues_edges? _$v;
 
   String? _G__typename;
@@ -829,7 +975,7 @@ class GIssuesData_repository_issues_edgesBuilder
 
   GIssuesData_repository_issues_edges_nodeBuilder? _node;
   GIssuesData_repository_issues_edges_nodeBuilder get node =>
-      _$this._node ??= new GIssuesData_repository_issues_edges_nodeBuilder();
+      _$this._node ??= GIssuesData_repository_issues_edges_nodeBuilder();
   set node(GIssuesData_repository_issues_edges_nodeBuilder? node) =>
       _$this._node = node;
 
@@ -849,13 +995,13 @@ class GIssuesData_repository_issues_edgesBuilder
 
   @override
   void replace(GIssuesData_repository_issues_edges other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesData_repository_issues_edges;
   }
 
   @override
   void update(
-      void Function(GIssuesData_repository_issues_edgesBuilder)? updates) {
+    void Function(GIssuesData_repository_issues_edgesBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -865,10 +1011,14 @@ class GIssuesData_repository_issues_edgesBuilder
   _$GIssuesData_repository_issues_edges _build() {
     _$GIssuesData_repository_issues_edges _$result;
     try {
-      _$result = _$v ??
-          new _$GIssuesData_repository_issues_edges._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GIssuesData_repository_issues_edges', 'G__typename'),
+      _$result =
+          _$v ??
+          _$GIssuesData_repository_issues_edges._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GIssuesData_repository_issues_edges',
+              'G__typename',
+            ),
             node: _node?.build(),
           );
     } catch (_) {
@@ -877,10 +1027,11 @@ class GIssuesData_repository_issues_edgesBuilder
         _$failedField = 'node';
         _node?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GIssuesData_repository_issues_edges',
-            _$failedField,
-            e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GIssuesData_repository_issues_edges',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
@@ -904,41 +1055,27 @@ class _$GIssuesData_repository_issues_edges_node
   @override
   final GIssuesData_repository_issues_edges_node_author? author;
 
-  factory _$GIssuesData_repository_issues_edges_node(
-          [void Function(GIssuesData_repository_issues_edges_nodeBuilder)?
-              updates]) =>
-      (new GIssuesData_repository_issues_edges_nodeBuilder()..update(updates))
-          ._build();
+  factory _$GIssuesData_repository_issues_edges_node([
+    void Function(GIssuesData_repository_issues_edges_nodeBuilder)? updates,
+  ]) => (GIssuesData_repository_issues_edges_nodeBuilder()..update(updates))
+      ._build();
 
-  _$GIssuesData_repository_issues_edges_node._(
-      {required this.G__typename,
-      required this.id,
-      required this.number,
-      required this.title,
-      required this.createdAt,
-      this.author})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GIssuesData_repository_issues_edges_node', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        id, r'GIssuesData_repository_issues_edges_node', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        number, r'GIssuesData_repository_issues_edges_node', 'number');
-    BuiltValueNullFieldError.checkNotNull(
-        title, r'GIssuesData_repository_issues_edges_node', 'title');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'GIssuesData_repository_issues_edges_node', 'createdAt');
-  }
-
+  _$GIssuesData_repository_issues_edges_node._({
+    required this.G__typename,
+    required this.id,
+    required this.number,
+    required this.title,
+    required this.createdAt,
+    this.author,
+  }) : super._();
   @override
   GIssuesData_repository_issues_edges_node rebuild(
-          void Function(GIssuesData_repository_issues_edges_nodeBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GIssuesData_repository_issues_edges_nodeBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GIssuesData_repository_issues_edges_nodeBuilder toBuilder() =>
-      new GIssuesData_repository_issues_edges_nodeBuilder()..replace(this);
+      GIssuesData_repository_issues_edges_nodeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -968,7 +1105,8 @@ class _$GIssuesData_repository_issues_edges_node
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GIssuesData_repository_issues_edges_node')
+            r'GIssuesData_repository_issues_edges_node',
+          )
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('number', number)
@@ -981,8 +1119,10 @@ class _$GIssuesData_repository_issues_edges_node
 
 class GIssuesData_repository_issues_edges_nodeBuilder
     implements
-        Builder<GIssuesData_repository_issues_edges_node,
-            GIssuesData_repository_issues_edges_nodeBuilder> {
+        Builder<
+          GIssuesData_repository_issues_edges_node,
+          GIssuesData_repository_issues_edges_nodeBuilder
+        > {
   _$GIssuesData_repository_issues_edges_node? _$v;
 
   String? _G__typename;
@@ -1003,14 +1143,14 @@ class GIssuesData_repository_issues_edges_nodeBuilder
 
   _i2.GDateTimeBuilder? _createdAt;
   _i2.GDateTimeBuilder get createdAt =>
-      _$this._createdAt ??= new _i2.GDateTimeBuilder();
+      _$this._createdAt ??= _i2.GDateTimeBuilder();
   set createdAt(_i2.GDateTimeBuilder? createdAt) =>
       _$this._createdAt = createdAt;
 
   GIssuesData_repository_issues_edges_node_authorBuilder? _author;
   GIssuesData_repository_issues_edges_node_authorBuilder get author =>
       _$this._author ??=
-          new GIssuesData_repository_issues_edges_node_authorBuilder();
+          GIssuesData_repository_issues_edges_node_authorBuilder();
   set author(GIssuesData_repository_issues_edges_node_authorBuilder? author) =>
       _$this._author = author;
 
@@ -1034,13 +1174,13 @@ class GIssuesData_repository_issues_edges_nodeBuilder
 
   @override
   void replace(GIssuesData_repository_issues_edges_node other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesData_repository_issues_edges_node;
   }
 
   @override
   void update(
-      void Function(GIssuesData_repository_issues_edges_nodeBuilder)? updates) {
+    void Function(GIssuesData_repository_issues_edges_nodeBuilder)? updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -1050,16 +1190,29 @@ class GIssuesData_repository_issues_edges_nodeBuilder
   _$GIssuesData_repository_issues_edges_node _build() {
     _$GIssuesData_repository_issues_edges_node _$result;
     try {
-      _$result = _$v ??
-          new _$GIssuesData_repository_issues_edges_node._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GIssuesData_repository_issues_edges_node', 'G__typename'),
+      _$result =
+          _$v ??
+          _$GIssuesData_repository_issues_edges_node._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(
+              G__typename,
+              r'GIssuesData_repository_issues_edges_node',
+              'G__typename',
+            ),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GIssuesData_repository_issues_edges_node', 'id'),
+              id,
+              r'GIssuesData_repository_issues_edges_node',
+              'id',
+            ),
             number: BuiltValueNullFieldError.checkNotNull(
-                number, r'GIssuesData_repository_issues_edges_node', 'number'),
+              number,
+              r'GIssuesData_repository_issues_edges_node',
+              'number',
+            ),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, r'GIssuesData_repository_issues_edges_node', 'title'),
+              title,
+              r'GIssuesData_repository_issues_edges_node',
+              'title',
+            ),
             createdAt: createdAt.build(),
             author: _author?.build(),
           );
@@ -1071,10 +1224,11 @@ class GIssuesData_repository_issues_edges_nodeBuilder
         _$failedField = 'author';
         _author?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GIssuesData_repository_issues_edges_node',
-            _$failedField,
-            e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GIssuesData_repository_issues_edges_node',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }
@@ -1090,33 +1244,27 @@ class _$GIssuesData_repository_issues_edges_node_author
   @override
   final String login;
 
-  factory _$GIssuesData_repository_issues_edges_node_author(
-          [void Function(
-                  GIssuesData_repository_issues_edges_node_authorBuilder)?
-              updates]) =>
-      (new GIssuesData_repository_issues_edges_node_authorBuilder()
+  factory _$GIssuesData_repository_issues_edges_node_author([
+    void Function(GIssuesData_repository_issues_edges_node_authorBuilder)?
+    updates,
+  ]) =>
+      (GIssuesData_repository_issues_edges_node_authorBuilder()
             ..update(updates))
           ._build();
 
-  _$GIssuesData_repository_issues_edges_node_author._(
-      {required this.G__typename, required this.login})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GIssuesData_repository_issues_edges_node_author', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(
-        login, r'GIssuesData_repository_issues_edges_node_author', 'login');
-  }
-
+  _$GIssuesData_repository_issues_edges_node_author._({
+    required this.G__typename,
+    required this.login,
+  }) : super._();
   @override
   GIssuesData_repository_issues_edges_node_author rebuild(
-          void Function(GIssuesData_repository_issues_edges_node_authorBuilder)
-              updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(GIssuesData_repository_issues_edges_node_authorBuilder)
+    updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   GIssuesData_repository_issues_edges_node_authorBuilder toBuilder() =>
-      new GIssuesData_repository_issues_edges_node_authorBuilder()
-        ..replace(this);
+      GIssuesData_repository_issues_edges_node_authorBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -1138,7 +1286,8 @@ class _$GIssuesData_repository_issues_edges_node_author
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GIssuesData_repository_issues_edges_node_author')
+            r'GIssuesData_repository_issues_edges_node_author',
+          )
           ..add('G__typename', G__typename)
           ..add('login', login))
         .toString();
@@ -1147,8 +1296,10 @@ class _$GIssuesData_repository_issues_edges_node_author
 
 class GIssuesData_repository_issues_edges_node_authorBuilder
     implements
-        Builder<GIssuesData_repository_issues_edges_node_author,
-            GIssuesData_repository_issues_edges_node_authorBuilder> {
+        Builder<
+          GIssuesData_repository_issues_edges_node_author,
+          GIssuesData_repository_issues_edges_node_authorBuilder
+        > {
   _$GIssuesData_repository_issues_edges_node_author? _$v;
 
   String? _G__typename;
@@ -1175,14 +1326,14 @@ class GIssuesData_repository_issues_edges_node_authorBuilder
 
   @override
   void replace(GIssuesData_repository_issues_edges_node_author other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesData_repository_issues_edges_node_author;
   }
 
   @override
   void update(
-      void Function(GIssuesData_repository_issues_edges_node_authorBuilder)?
-          updates) {
+    void Function(GIssuesData_repository_issues_edges_node_authorBuilder)?
+    updates,
+  ) {
     if (updates != null) updates(this);
   }
 
@@ -1190,14 +1341,19 @@ class GIssuesData_repository_issues_edges_node_authorBuilder
   GIssuesData_repository_issues_edges_node_author build() => _build();
 
   _$GIssuesData_repository_issues_edges_node_author _build() {
-    final _$result = _$v ??
-        new _$GIssuesData_repository_issues_edges_node_author._(
+    final _$result =
+        _$v ??
+        _$GIssuesData_repository_issues_edges_node_author._(
           G__typename: BuiltValueNullFieldError.checkNotNull(
-              G__typename,
-              r'GIssuesData_repository_issues_edges_node_author',
-              'G__typename'),
-          login: BuiltValueNullFieldError.checkNotNull(login,
-              r'GIssuesData_repository_issues_edges_node_author', 'login'),
+            G__typename,
+            r'GIssuesData_repository_issues_edges_node_author',
+            'G__typename',
+          ),
+          login: BuiltValueNullFieldError.checkNotNull(
+            login,
+            r'GIssuesData_repository_issues_edges_node_author',
+            'login',
+          ),
         );
     replace(_$result);
     return _$result;

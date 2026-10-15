@@ -13,7 +13,7 @@ abstract class GNewIssueVars
     implements Built<GNewIssueVars, GNewIssueVarsBuilder> {
   GNewIssueVars._();
 
-  factory GNewIssueVars([Function(GNewIssueVarsBuilder b) updates]) =
+  factory GNewIssueVars([void Function(GNewIssueVarsBuilder b) updates]) =
       _$GNewIssueVars;
 
   String get repositoryId;

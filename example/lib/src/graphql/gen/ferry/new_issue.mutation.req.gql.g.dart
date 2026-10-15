@@ -6,8 +6,7 @@ part of 'new_issue.mutation.req.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GNewIssueReq> _$gNewIssueReqSerializer =
-    new _$GNewIssueReqSerializer();
+Serializer<GNewIssueReq> _$gNewIssueReqSerializer = _$GNewIssueReqSerializer();
 
 class _$GNewIssueReqSerializer implements StructuredSerializer<GNewIssueReq> {
   @override
@@ -16,64 +15,91 @@ class _$GNewIssueReqSerializer implements StructuredSerializer<GNewIssueReq> {
   final String wireName = 'GNewIssueReq';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GNewIssueReq object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GNewIssueReq object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       'vars',
-      serializers.serialize(object.vars,
-          specifiedType: const FullType(_i3.GNewIssueVars)),
+      serializers.serialize(
+        object.vars,
+        specifiedType: const FullType(_i3.GNewIssueVars),
+      ),
       'operation',
-      serializers.serialize(object.operation,
-          specifiedType: const FullType(_i4.Operation)),
+      serializers.serialize(
+        object.operation,
+        specifiedType: const FullType(_i4.Operation),
+      ),
       'executeOnListen',
-      serializers.serialize(object.executeOnListen,
-          specifiedType: const FullType(bool)),
+      serializers.serialize(
+        object.executeOnListen,
+        specifiedType: const FullType(bool),
+      ),
     ];
     Object? value;
     value = object.requestId;
     if (value != null) {
       result
         ..add('requestId')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(
+          serializers.serialize(value, specifiedType: const FullType(String)),
+        );
     }
     value = object.optimisticResponse;
     if (value != null) {
       result
         ..add('optimisticResponse')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GNewIssueData)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(_i2.GNewIssueData),
+          ),
+        );
     }
     value = object.updateCacheHandlerKey;
     if (value != null) {
       result
         ..add('updateCacheHandlerKey')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(
+          serializers.serialize(value, specifiedType: const FullType(String)),
+        );
     }
     value = object.updateCacheHandlerContext;
     if (value != null) {
       result
         ..add('updateCacheHandlerContext')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                Map, const [const FullType(String), const FullType(dynamic)])));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(Map, const [
+              const FullType(String),
+              const FullType(dynamic),
+            ]),
+          ),
+        );
     }
     value = object.fetchPolicy;
     if (value != null) {
       result
         ..add('fetchPolicy')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i1.FetchPolicy)));
+        ..add(
+          serializers.serialize(
+            value,
+            specifiedType: const FullType(_i1.FetchPolicy),
+          ),
+        );
     }
     return result;
   }
 
   @override
   GNewIssueReq deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GNewIssueReqBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GNewIssueReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -82,42 +108,73 @@ class _$GNewIssueReqSerializer implements StructuredSerializer<GNewIssueReq> {
       final Object? value = iterator.current;
       switch (key) {
         case 'vars':
-          result.vars.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GNewIssueVars))!
-              as _i3.GNewIssueVars);
+          result.vars.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(_i3.GNewIssueVars),
+                )!
+                as _i3.GNewIssueVars,
+          );
           break;
         case 'operation':
-          result.operation = serializers.deserialize(value,
-              specifiedType: const FullType(_i4.Operation))! as _i4.Operation;
+          result.operation =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(_i4.Operation),
+                  )!
+                  as _i4.Operation;
           break;
         case 'requestId':
-          result.requestId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.requestId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String?;
           break;
         case 'optimisticResponse':
-          result.optimisticResponse.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GNewIssueData))!
-              as _i2.GNewIssueData);
+          result.optimisticResponse.replace(
+            serializers.deserialize(
+                  value,
+                  specifiedType: const FullType(_i2.GNewIssueData),
+                )!
+                as _i2.GNewIssueData,
+          );
           break;
         case 'updateCacheHandlerKey':
-          result.updateCacheHandlerKey = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.updateCacheHandlerKey =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String?;
           break;
         case 'updateCacheHandlerContext':
-          result.updateCacheHandlerContext = serializers.deserialize(value,
-              specifiedType: const FullType(Map, const [
-                const FullType(String),
-                const FullType(dynamic)
-              ])) as Map<String, dynamic>?;
+          result.updateCacheHandlerContext =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(Map, const [
+                      const FullType(String),
+                      const FullType(dynamic),
+                    ]),
+                  )
+                  as Map<String, dynamic>?;
           break;
         case 'fetchPolicy':
-          result.fetchPolicy = serializers.deserialize(value,
-                  specifiedType: const FullType(_i1.FetchPolicy))
-              as _i1.FetchPolicy?;
+          result.fetchPolicy =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(_i1.FetchPolicy),
+                  )
+                  as _i1.FetchPolicy?;
           break;
         case 'executeOnListen':
-          result.executeOnListen = serializers.deserialize(value,
-              specifiedType: const FullType(bool))! as bool;
+          result.executeOnListen =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )!
+                  as bool;
           break;
       }
     }
@@ -135,7 +192,7 @@ class _$GNewIssueReq extends GNewIssueReq {
   final String? requestId;
   @override
   final _i2.GNewIssueData? Function(_i2.GNewIssueData?, _i2.GNewIssueData?)?
-      updateResult;
+  updateResult;
   @override
   final _i2.GNewIssueData? optimisticResponse;
   @override
@@ -146,34 +203,30 @@ class _$GNewIssueReq extends GNewIssueReq {
   final _i1.FetchPolicy? fetchPolicy;
   @override
   final bool executeOnListen;
+  @override
+  final _i4.Context? context;
 
   factory _$GNewIssueReq([void Function(GNewIssueReqBuilder)? updates]) =>
-      (new GNewIssueReqBuilder()..update(updates))._build();
+      (GNewIssueReqBuilder()..update(updates))._build();
 
-  _$GNewIssueReq._(
-      {required this.vars,
-      required this.operation,
-      this.requestId,
-      this.updateResult,
-      this.optimisticResponse,
-      this.updateCacheHandlerKey,
-      this.updateCacheHandlerContext,
-      this.fetchPolicy,
-      required this.executeOnListen})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GNewIssueReq', 'vars');
-    BuiltValueNullFieldError.checkNotNull(
-        operation, r'GNewIssueReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GNewIssueReq', 'executeOnListen');
-  }
-
+  _$GNewIssueReq._({
+    required this.vars,
+    required this.operation,
+    this.requestId,
+    this.updateResult,
+    this.optimisticResponse,
+    this.updateCacheHandlerKey,
+    this.updateCacheHandlerContext,
+    this.fetchPolicy,
+    required this.executeOnListen,
+    this.context,
+  }) : super._();
   @override
   GNewIssueReq rebuild(void Function(GNewIssueReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GNewIssueReqBuilder toBuilder() => new GNewIssueReqBuilder()..replace(this);
+  GNewIssueReqBuilder toBuilder() => GNewIssueReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -188,7 +241,8 @@ class _$GNewIssueReq extends GNewIssueReq {
         updateCacheHandlerKey == other.updateCacheHandlerKey &&
         updateCacheHandlerContext == other.updateCacheHandlerContext &&
         fetchPolicy == other.fetchPolicy &&
-        executeOnListen == other.executeOnListen;
+        executeOnListen == other.executeOnListen &&
+        context == other.context;
   }
 
   @override
@@ -203,6 +257,7 @@ class _$GNewIssueReq extends GNewIssueReq {
     _$hash = $jc(_$hash, updateCacheHandlerContext.hashCode);
     _$hash = $jc(_$hash, fetchPolicy.hashCode);
     _$hash = $jc(_$hash, executeOnListen.hashCode);
+    _$hash = $jc(_$hash, context.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -218,7 +273,8 @@ class _$GNewIssueReq extends GNewIssueReq {
           ..add('updateCacheHandlerKey', updateCacheHandlerKey)
           ..add('updateCacheHandlerContext', updateCacheHandlerContext)
           ..add('fetchPolicy', fetchPolicy)
-          ..add('executeOnListen', executeOnListen))
+          ..add('executeOnListen', executeOnListen)
+          ..add('context', context))
         .toString();
   }
 }
@@ -229,7 +285,7 @@ class GNewIssueReqBuilder
 
   _i3.GNewIssueVarsBuilder? _vars;
   _i3.GNewIssueVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GNewIssueVarsBuilder();
+      _$this._vars ??= _i3.GNewIssueVarsBuilder();
   set vars(_i3.GNewIssueVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
@@ -241,17 +297,17 @@ class GNewIssueReqBuilder
   set requestId(String? requestId) => _$this._requestId = requestId;
 
   _i2.GNewIssueData? Function(_i2.GNewIssueData?, _i2.GNewIssueData?)?
-      _updateResult;
+  _updateResult;
   _i2.GNewIssueData? Function(_i2.GNewIssueData?, _i2.GNewIssueData?)?
-      get updateResult => _$this._updateResult;
+  get updateResult => _$this._updateResult;
   set updateResult(
-          _i2.GNewIssueData? Function(_i2.GNewIssueData?, _i2.GNewIssueData?)?
-              updateResult) =>
-      _$this._updateResult = updateResult;
+    _i2.GNewIssueData? Function(_i2.GNewIssueData?, _i2.GNewIssueData?)?
+    updateResult,
+  ) => _$this._updateResult = updateResult;
 
   _i2.GNewIssueDataBuilder? _optimisticResponse;
   _i2.GNewIssueDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GNewIssueDataBuilder();
+      _$this._optimisticResponse ??= _i2.GNewIssueDataBuilder();
   set optimisticResponse(_i2.GNewIssueDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
@@ -264,8 +320,8 @@ class GNewIssueReqBuilder
   Map<String, dynamic>? get updateCacheHandlerContext =>
       _$this._updateCacheHandlerContext;
   set updateCacheHandlerContext(
-          Map<String, dynamic>? updateCacheHandlerContext) =>
-      _$this._updateCacheHandlerContext = updateCacheHandlerContext;
+    Map<String, dynamic>? updateCacheHandlerContext,
+  ) => _$this._updateCacheHandlerContext = updateCacheHandlerContext;
 
   _i1.FetchPolicy? _fetchPolicy;
   _i1.FetchPolicy? get fetchPolicy => _$this._fetchPolicy;
@@ -276,6 +332,10 @@ class GNewIssueReqBuilder
   bool? get executeOnListen => _$this._executeOnListen;
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
+
+  _i4.Context? _context;
+  _i4.Context? get context => _$this._context;
+  set context(_i4.Context? context) => _$this._context = context;
 
   GNewIssueReqBuilder() {
     GNewIssueReq._initializeBuilder(this);
@@ -293,6 +353,7 @@ class GNewIssueReqBuilder
       _updateCacheHandlerContext = $v.updateCacheHandlerContext;
       _fetchPolicy = $v.fetchPolicy;
       _executeOnListen = $v.executeOnListen;
+      _context = $v.context;
       _$v = null;
     }
     return this;
@@ -300,7 +361,6 @@ class GNewIssueReqBuilder
 
   @override
   void replace(GNewIssueReq other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GNewIssueReq;
   }
 
@@ -315,11 +375,15 @@ class GNewIssueReqBuilder
   _$GNewIssueReq _build() {
     _$GNewIssueReq _$result;
     try {
-      _$result = _$v ??
-          new _$GNewIssueReq._(
+      _$result =
+          _$v ??
+          _$GNewIssueReq._(
             vars: vars.build(),
             operation: BuiltValueNullFieldError.checkNotNull(
-                operation, r'GNewIssueReq', 'operation'),
+              operation,
+              r'GNewIssueReq',
+              'operation',
+            ),
             requestId: requestId,
             updateResult: updateResult,
             optimisticResponse: _optimisticResponse?.build(),
@@ -327,7 +391,11 @@ class GNewIssueReqBuilder
             updateCacheHandlerContext: updateCacheHandlerContext,
             fetchPolicy: fetchPolicy,
             executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                executeOnListen, r'GNewIssueReq', 'executeOnListen'),
+              executeOnListen,
+              r'GNewIssueReq',
+              'executeOnListen',
+            ),
+            context: context,
           );
     } catch (_) {
       late String _$failedField;
@@ -338,8 +406,11 @@ class GNewIssueReqBuilder
         _$failedField = 'optimisticResponse';
         _optimisticResponse?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GNewIssueReq', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(
+          r'GNewIssueReq',
+          _$failedField,
+          e.toString(),
+        );
       }
       rethrow;
     }

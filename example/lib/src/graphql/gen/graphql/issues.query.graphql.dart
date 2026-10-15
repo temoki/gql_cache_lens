@@ -8,11 +8,7 @@ class Variables$Query$Issues {
   factory Variables$Query$Issues({
     required String owner,
     required String name,
-  }) =>
-      Variables$Query$Issues._({
-        r'owner': owner,
-        r'name': name,
-      });
+  }) => Variables$Query$Issues._({r'owner': owner, r'name': name});
 
   Variables$Query$Issues._(this._$data);
 
@@ -41,10 +37,7 @@ class Variables$Query$Issues {
   }
 
   CopyWith$Variables$Query$Issues<Variables$Query$Issues> get copyWith =>
-      CopyWith$Variables$Query$Issues(
-        this,
-        (i) => i,
-      );
+      CopyWith$Variables$Query$Issues(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -71,10 +64,7 @@ class Variables$Query$Issues {
   int get hashCode {
     final l$owner = owner;
     final l$name = name;
-    return Object.hashAll([
-      l$owner,
-      l$name,
-    ]);
+    return Object.hashAll([l$owner, l$name]);
   }
 }
 
@@ -87,18 +77,12 @@ abstract class CopyWith$Variables$Query$Issues<TRes> {
   factory CopyWith$Variables$Query$Issues.stub(TRes res) =
       _CopyWithStubImpl$Variables$Query$Issues;
 
-  TRes call({
-    String? owner,
-    String? name,
-  });
+  TRes call({String? owner, String? name});
 }
 
 class _CopyWithImpl$Variables$Query$Issues<TRes>
     implements CopyWith$Variables$Query$Issues<TRes> {
-  _CopyWithImpl$Variables$Query$Issues(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$Issues(this._instance, this._then);
 
   final Variables$Query$Issues _instance;
 
@@ -106,15 +90,13 @@ class _CopyWithImpl$Variables$Query$Issues<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? owner = _undefined,
-    Object? name = _undefined,
-  }) =>
-      _then(Variables$Query$Issues._({
-        ..._instance._$data,
-        if (owner != _undefined && owner != null) 'owner': (owner as String),
-        if (name != _undefined && name != null) 'name': (name as String),
-      }));
+  TRes call({Object? owner = _undefined, Object? name = _undefined}) => _then(
+    Variables$Query$Issues._({
+      ..._instance._$data,
+      if (owner != _undefined && owner != null) 'owner': (owner as String),
+      if (name != _undefined && name != null) 'name': (name as String),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$Issues<TRes>
@@ -123,18 +105,11 @@ class _CopyWithStubImpl$Variables$Query$Issues<TRes>
 
   TRes _res;
 
-  call({
-    String? owner,
-    String? name,
-  }) =>
-      _res;
+  call({String? owner, String? name}) => _res;
 }
 
 class Query$Issues {
-  Query$Issues({
-    this.repository,
-    this.$__typename = 'Query',
-  });
+  Query$Issues({this.repository, this.$__typename = 'Query'});
 
   factory Query$Issues.fromJson(Map<String, dynamic> json) {
     final l$repository = json['repository'];
@@ -143,7 +118,8 @@ class Query$Issues {
       repository: l$repository == null
           ? null
           : Query$Issues$repository.fromJson(
-              (l$repository as Map<String, dynamic>)),
+              (l$repository as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -165,10 +141,7 @@ class Query$Issues {
   int get hashCode {
     final l$repository = repository;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$repository,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$repository, l$$__typename]);
   }
 
   @override
@@ -194,10 +167,8 @@ class Query$Issues {
 }
 
 extension UtilityExtension$Query$Issues on Query$Issues {
-  CopyWith$Query$Issues<Query$Issues> get copyWith => CopyWith$Query$Issues(
-        this,
-        (i) => i,
-      );
+  CopyWith$Query$Issues<Query$Issues> get copyWith =>
+      CopyWith$Query$Issues(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Issues<TRes> {
@@ -208,18 +179,12 @@ abstract class CopyWith$Query$Issues<TRes> {
 
   factory CopyWith$Query$Issues.stub(TRes res) = _CopyWithStubImpl$Query$Issues;
 
-  TRes call({
-    Query$Issues$repository? repository,
-    String? $__typename,
-  });
+  TRes call({Query$Issues$repository? repository, String? $__typename});
   CopyWith$Query$Issues$repository<TRes> get repository;
 }
 
 class _CopyWithImpl$Query$Issues<TRes> implements CopyWith$Query$Issues<TRes> {
-  _CopyWithImpl$Query$Issues(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Issues(this._instance, this._then);
 
   final Query$Issues _instance;
 
@@ -230,22 +195,25 @@ class _CopyWithImpl$Query$Issues<TRes> implements CopyWith$Query$Issues<TRes> {
   TRes call({
     Object? repository = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues(
-        repository: repository == _undefined
-            ? _instance.repository
-            : (repository as Query$Issues$repository?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Issues(
+      repository: repository == _undefined
+          ? _instance.repository
+          : (repository as Query$Issues$repository?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$Issues$repository<TRes> get repository {
     final local$repository = _instance.repository;
     return local$repository == null
         ? CopyWith$Query$Issues$repository.stub(_then(_instance))
         : CopyWith$Query$Issues$repository(
-            local$repository, (e) => call(repository: e));
+            local$repository,
+            (e) => call(repository: e),
+          );
   }
 }
 
@@ -255,153 +223,175 @@ class _CopyWithStubImpl$Query$Issues<TRes>
 
   TRes _res;
 
-  call({
-    Query$Issues$repository? repository,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$Issues$repository? repository, String? $__typename}) => _res;
 
   CopyWith$Query$Issues$repository<TRes> get repository =>
       CopyWith$Query$Issues$repository.stub(_res);
 }
 
-const documentNodeQueryIssues = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'Issues'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'owner')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+const documentNodeQueryIssues = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'Issues'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'owner')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'name')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'name')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'repository'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'owner'),
-            value: VariableNode(name: NameNode(value: 'owner')),
-          ),
-          ArgumentNode(
-            name: NameNode(value: 'name'),
-            value: VariableNode(name: NameNode(value: 'name')),
-          ),
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'id'),
-            alias: null,
-            arguments: [],
-            directives: [],
-            selectionSet: null,
-          ),
-          FieldNode(
-            name: NameNode(value: 'issues'),
+            name: NameNode(value: 'repository'),
             alias: null,
             arguments: [
               ArgumentNode(
-                name: NameNode(value: 'first'),
-                value: IntValueNode(value: '50'),
+                name: NameNode(value: 'owner'),
+                value: VariableNode(name: NameNode(value: 'owner')),
               ),
               ArgumentNode(
-                name: NameNode(value: 'states'),
-                value: EnumValueNode(name: NameNode(value: 'OPEN')),
-              ),
-              ArgumentNode(
-                name: NameNode(value: 'orderBy'),
-                value: ObjectValueNode(fields: [
-                  ObjectFieldNode(
-                    name: NameNode(value: 'field'),
-                    value: EnumValueNode(name: NameNode(value: 'CREATED_AT')),
-                  ),
-                  ObjectFieldNode(
-                    name: NameNode(value: 'direction'),
-                    value: EnumValueNode(name: NameNode(value: 'DESC')),
-                  ),
-                ]),
+                name: NameNode(value: 'name'),
+                value: VariableNode(name: NameNode(value: 'name')),
               ),
             ],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'edges'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'node'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
-                      FieldNode(
-                        name: NameNode(value: 'id'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                      FieldNode(
-                        name: NameNode(value: 'number'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                      FieldNode(
-                        name: NameNode(value: 'title'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                      FieldNode(
-                        name: NameNode(value: 'createdAt'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: null,
-                      ),
-                      FieldNode(
-                        name: NameNode(value: 'author'),
-                        alias: null,
-                        arguments: [],
-                        directives: [],
-                        selectionSet: SelectionSetNode(selections: [
-                          FieldNode(
-                            name: NameNode(value: 'login'),
-                            alias: null,
-                            arguments: [],
-                            directives: [],
-                            selectionSet: null,
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'id'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+                FieldNode(
+                  name: NameNode(value: 'issues'),
+                  alias: null,
+                  arguments: [
+                    ArgumentNode(
+                      name: NameNode(value: 'first'),
+                      value: IntValueNode(value: '50'),
+                    ),
+                    ArgumentNode(
+                      name: NameNode(value: 'states'),
+                      value: EnumValueNode(name: NameNode(value: 'OPEN')),
+                    ),
+                    ArgumentNode(
+                      name: NameNode(value: 'orderBy'),
+                      value: ObjectValueNode(
+                        fields: [
+                          ObjectFieldNode(
+                            name: NameNode(value: 'field'),
+                            value: EnumValueNode(
+                              name: NameNode(value: 'CREATED_AT'),
+                            ),
                           ),
-                          FieldNode(
-                            name: NameNode(value: '__typename'),
-                            alias: null,
-                            arguments: [],
-                            directives: [],
-                            selectionSet: null,
+                          ObjectFieldNode(
+                            name: NameNode(value: 'direction'),
+                            value: EnumValueNode(name: NameNode(value: 'DESC')),
                           ),
-                        ]),
+                        ],
+                      ),
+                    ),
+                  ],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'edges'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'node'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'id'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'number'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'title'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'createdAt'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'author'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: SelectionSetNode(
+                                      selections: [
+                                        FieldNode(
+                                          name: NameNode(value: 'login'),
+                                          alias: null,
+                                          arguments: [],
+                                          directives: [],
+                                          selectionSet: null,
+                                        ),
+                                        FieldNode(
+                                          name: NameNode(value: '__typename'),
+                                          alias: null,
+                                          arguments: [],
+                                          directives: [],
+                                          selectionSet: null,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
                       ),
                       FieldNode(
                         name: NameNode(value: '__typename'),
@@ -410,25 +400,18 @@ const documentNodeQueryIssues = DocumentNode(definitions: [
                         directives: [],
                         selectionSet: null,
                       ),
-                    ]),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -437,24 +420,15 @@ const documentNodeQueryIssues = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 Query$Issues _parserFn$Query$Issues(Map<String, dynamic> data) =>
     Query$Issues.fromJson(data);
-typedef OnQueryComplete$Query$Issues = FutureOr<void> Function(
-  Map<String, dynamic>?,
-  Query$Issues?,
-);
+typedef OnQueryComplete$Query$Issues =
+    FutureOr<void> Function(Map<String, dynamic>?, Query$Issues?);
 
 class Options$Query$Issues extends graphql.QueryOptions<Query$Issues> {
   Options$Query$Issues({
@@ -469,36 +443,36 @@ class Options$Query$Issues extends graphql.QueryOptions<Query$Issues> {
     graphql.Context? context,
     OnQueryComplete$Query$Issues? onComplete,
     graphql.OnQueryError? onError,
-  })  : onCompleteWithParsed = onComplete,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          pollInterval: pollInterval,
-          context: context,
-          onComplete: onComplete == null
-              ? null
-              : (data) => onComplete(
-                    data,
-                    data == null ? null : _parserFn$Query$Issues(data),
-                  ),
-          onError: onError,
-          document: documentNodeQueryIssues,
-          parserFn: _parserFn$Query$Issues,
-        );
+  }) : onCompleteWithParsed = onComplete,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         pollInterval: pollInterval,
+         context: context,
+         onComplete: onComplete == null
+             ? null
+             : (data) => onComplete(
+                 data,
+                 data == null ? null : _parserFn$Query$Issues(data),
+               ),
+         onError: onError,
+         document: documentNodeQueryIssues,
+         parserFn: _parserFn$Query$Issues,
+       );
 
   final OnQueryComplete$Query$Issues? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onComplete == null
-            ? super.properties
-            : super.properties.where((property) => property != onComplete),
-        onCompleteWithParsed,
-      ];
+    ...super.onComplete == null
+        ? super.properties
+        : super.properties.where((property) => property != onComplete),
+    onCompleteWithParsed,
+  ];
 }
 
 class WatchOptions$Query$Issues
@@ -517,20 +491,20 @@ class WatchOptions$Query$Issues
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeQueryIssues,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Query$Issues,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeQueryIssues,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Query$Issues,
+       );
 }
 
 class FetchMoreOptions$Query$Issues extends graphql.FetchMoreOptions {
@@ -538,32 +512,31 @@ class FetchMoreOptions$Query$Issues extends graphql.FetchMoreOptions {
     required graphql.UpdateQuery updateQuery,
     required Variables$Query$Issues variables,
   }) : super(
-          updateQuery: updateQuery,
-          variables: variables.toJson(),
-          document: documentNodeQueryIssues,
-        );
+         updateQuery: updateQuery,
+         variables: variables.toJson(),
+         document: documentNodeQueryIssues,
+       );
 }
 
 extension ClientExtension$Query$Issues on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$Issues>> query$Issues(
-          Options$Query$Issues options) async =>
-      await this.query(options);
+    Options$Query$Issues options,
+  ) async => await this.query(options);
   graphql.ObservableQuery<Query$Issues> watchQuery$Issues(
-          WatchOptions$Query$Issues options) =>
-      this.watchQuery(options);
+    WatchOptions$Query$Issues options,
+  ) => this.watchQuery(options);
   void writeQuery$Issues({
     required Query$Issues data,
     required Variables$Query$Issues variables,
     bool broadcast = true,
-  }) =>
-      this.writeQuery(
-        graphql.Request(
-          operation: graphql.Operation(document: documentNodeQueryIssues),
-          variables: variables.toJson(),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeQuery(
+    graphql.Request(
+      operation: graphql.Operation(document: documentNodeQueryIssues),
+      variables: variables.toJson(),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Query$Issues? readQuery$Issues({
     required Variables$Query$Issues variables,
     bool optimistic = true,
@@ -580,22 +553,18 @@ extension ClientExtension$Query$Issues on graphql.GraphQLClient {
 }
 
 graphql_flutter.QueryHookResult<Query$Issues> useQuery$Issues(
-        Options$Query$Issues options) =>
-    graphql_flutter.useQuery(options);
+  Options$Query$Issues options,
+) => graphql_flutter.useQuery(options);
 graphql.ObservableQuery<Query$Issues> useWatchQuery$Issues(
-        WatchOptions$Query$Issues options) =>
-    graphql_flutter.useWatchQuery(options);
+  WatchOptions$Query$Issues options,
+) => graphql_flutter.useWatchQuery(options);
 
 class Query$Issues$Widget extends graphql_flutter.Query<Query$Issues> {
   Query$Issues$Widget({
     widgets.Key? key,
     required Options$Query$Issues options,
     required graphql_flutter.QueryBuilder<Query$Issues> builder,
-  }) : super(
-          key: key,
-          options: options,
-          builder: builder,
-        );
+  }) : super(key: key, options: options, builder: builder);
 }
 
 class Query$Issues$repository {
@@ -612,7 +581,8 @@ class Query$Issues$repository {
     return Query$Issues$repository(
       id: (l$id as String),
       issues: Query$Issues$repository$issues.fromJson(
-          (l$issues as Map<String, dynamic>)),
+        (l$issues as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -639,11 +609,7 @@ class Query$Issues$repository {
     final l$id = id;
     final l$issues = issues;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$issues,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$issues, l$$__typename]);
   }
 
   @override
@@ -675,10 +641,7 @@ class Query$Issues$repository {
 
 extension UtilityExtension$Query$Issues$repository on Query$Issues$repository {
   CopyWith$Query$Issues$repository<Query$Issues$repository> get copyWith =>
-      CopyWith$Query$Issues$repository(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$Issues$repository(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Issues$repository<TRes> {
@@ -700,10 +663,7 @@ abstract class CopyWith$Query$Issues$repository<TRes> {
 
 class _CopyWithImpl$Query$Issues$repository<TRes>
     implements CopyWith$Query$Issues$repository<TRes> {
-  _CopyWithImpl$Query$Issues$repository(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Issues$repository(this._instance, this._then);
 
   final Query$Issues$repository _instance;
 
@@ -715,21 +675,24 @@ class _CopyWithImpl$Query$Issues$repository<TRes>
     Object? id = _undefined,
     Object? issues = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        issues: issues == _undefined || issues == null
-            ? _instance.issues
-            : (issues as Query$Issues$repository$issues),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Issues$repository(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      issues: issues == _undefined || issues == null
+          ? _instance.issues
+          : (issues as Query$Issues$repository$issues),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$Issues$repository$issues<TRes> get issues {
     final local$issues = _instance.issues;
     return CopyWith$Query$Issues$repository$issues(
-        local$issues, (e) => call(issues: e));
+      local$issues,
+      (e) => call(issues: e),
+    );
   }
 }
 
@@ -743,8 +706,7 @@ class _CopyWithStubImpl$Query$Issues$repository<TRes>
     String? id,
     Query$Issues$repository$issues? issues,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$Issues$repository$issues<TRes> get issues =>
       CopyWith$Query$Issues$repository$issues.stub(_res);
@@ -761,10 +723,13 @@ class Query$Issues$repository$issues {
     final l$$__typename = json['__typename'];
     return Query$Issues$repository$issues(
       edges: (l$edges as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$Issues$repository$issues$edges.fromJson(
-                  (e as Map<String, dynamic>)))
+          ?.map(
+            (e) => e == null
+                ? null
+                : Query$Issues$repository$issues$edges.fromJson(
+                    (e as Map<String, dynamic>),
+                  ),
+          )
           .toList(),
       $__typename: (l$$__typename as String),
     );
@@ -830,10 +795,7 @@ class Query$Issues$repository$issues {
 extension UtilityExtension$Query$Issues$repository$issues
     on Query$Issues$repository$issues {
   CopyWith$Query$Issues$repository$issues<Query$Issues$repository$issues>
-      get copyWith => CopyWith$Query$Issues$repository$issues(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$Issues$repository$issues(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Issues$repository$issues<TRes> {
@@ -850,19 +812,20 @@ abstract class CopyWith$Query$Issues$repository$issues<TRes> {
     String? $__typename,
   });
   TRes edges(
-      Iterable<Query$Issues$repository$issues$edges?>? Function(
-              Iterable<
-                  CopyWith$Query$Issues$repository$issues$edges<
-                      Query$Issues$repository$issues$edges>?>?)
-          _fn);
+    Iterable<Query$Issues$repository$issues$edges?>? Function(
+      Iterable<
+        CopyWith$Query$Issues$repository$issues$edges<
+          Query$Issues$repository$issues$edges
+        >?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$Issues$repository$issues<TRes>
     implements CopyWith$Query$Issues$repository$issues<TRes> {
-  _CopyWithImpl$Query$Issues$repository$issues(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$Issues$repository$issues(this._instance, this._then);
 
   final Query$Issues$repository$issues _instance;
 
@@ -870,32 +833,36 @@ class _CopyWithImpl$Query$Issues$repository$issues<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? edges = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues(
-        edges: edges == _undefined
-            ? _instance.edges
-            : (edges as List<Query$Issues$repository$issues$edges?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? edges = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Issues$repository$issues(
+          edges: edges == _undefined
+              ? _instance.edges
+              : (edges as List<Query$Issues$repository$issues$edges?>?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   TRes edges(
-          Iterable<Query$Issues$repository$issues$edges?>? Function(
-                  Iterable<
-                      CopyWith$Query$Issues$repository$issues$edges<
-                          Query$Issues$repository$issues$edges>?>?)
-              _fn) =>
-      call(
-          edges: _fn(_instance.edges?.map((e) => e == null
-              ? null
-              : CopyWith$Query$Issues$repository$issues$edges(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$Issues$repository$issues$edges?>? Function(
+      Iterable<
+        CopyWith$Query$Issues$repository$issues$edges<
+          Query$Issues$repository$issues$edges
+        >?
+      >?,
+    )
+    _fn,
+  ) => call(
+    edges: _fn(
+      _instance.edges?.map(
+        (e) => e == null
+            ? null
+            : CopyWith$Query$Issues$repository$issues$edges(e, (i) => i),
+      ),
+    )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$Issues$repository$issues<TRes>
@@ -907,8 +874,7 @@ class _CopyWithStubImpl$Query$Issues$repository$issues<TRes>
   call({
     List<Query$Issues$repository$issues$edges?>? edges,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   edges(_fn) => _res;
 }
@@ -920,14 +886,16 @@ class Query$Issues$repository$issues$edges {
   });
 
   factory Query$Issues$repository$issues$edges.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$node = json['node'];
     final l$$__typename = json['__typename'];
     return Query$Issues$repository$issues$edges(
       node: l$node == null
           ? null
           : Query$Issues$repository$issues$edges$node.fromJson(
-              (l$node as Map<String, dynamic>)),
+              (l$node as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -949,10 +917,7 @@ class Query$Issues$repository$issues$edges {
   int get hashCode {
     final l$node = node;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$node,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$node, l$$__typename]);
   }
 
   @override
@@ -981,11 +946,9 @@ class Query$Issues$repository$issues$edges {
 extension UtilityExtension$Query$Issues$repository$issues$edges
     on Query$Issues$repository$issues$edges {
   CopyWith$Query$Issues$repository$issues$edges<
-          Query$Issues$repository$issues$edges>
-      get copyWith => CopyWith$Query$Issues$repository$issues$edges(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges
+  >
+  get copyWith => CopyWith$Query$Issues$repository$issues$edges(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Issues$repository$issues$edges<TRes> {
@@ -1017,26 +980,28 @@ class _CopyWithImpl$Query$Issues$repository$issues$edges<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? node = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues$edges(
-        node: node == _undefined
-            ? _instance.node
-            : (node as Query$Issues$repository$issues$edges$node?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? node = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Issues$repository$issues$edges(
+          node: node == _undefined
+              ? _instance.node
+              : (node as Query$Issues$repository$issues$edges$node?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   CopyWith$Query$Issues$repository$issues$edges$node<TRes> get node {
     final local$node = _instance.node;
     return local$node == null
         ? CopyWith$Query$Issues$repository$issues$edges$node.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Issues$repository$issues$edges$node(
-            local$node, (e) => call(node: e));
+            local$node,
+            (e) => call(node: e),
+          );
   }
 }
 
@@ -1049,8 +1014,7 @@ class _CopyWithStubImpl$Query$Issues$repository$issues$edges<TRes>
   call({
     Query$Issues$repository$issues$edges$node? node,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$Issues$repository$issues$edges$node<TRes> get node =>
       CopyWith$Query$Issues$repository$issues$edges$node.stub(_res);
@@ -1067,7 +1031,8 @@ class Query$Issues$repository$issues$edges$node {
   });
 
   factory Query$Issues$repository$issues$edges$node.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$number = json['number'];
     final l$title = json['title'];
@@ -1082,7 +1047,8 @@ class Query$Issues$repository$issues$edges$node {
       author: l$author == null
           ? null
           : Query$Issues$repository$issues$edges$node$author.fromJson(
-              (l$author as Map<String, dynamic>)),
+              (l$author as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1180,11 +1146,10 @@ class Query$Issues$repository$issues$edges$node {
 extension UtilityExtension$Query$Issues$repository$issues$edges$node
     on Query$Issues$repository$issues$edges$node {
   CopyWith$Query$Issues$repository$issues$edges$node<
-          Query$Issues$repository$issues$edges$node>
-      get copyWith => CopyWith$Query$Issues$repository$issues$edges$node(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges$node
+  >
+  get copyWith =>
+      CopyWith$Query$Issues$repository$issues$edges$node(this, (i) => i);
 }
 
 abstract class CopyWith$Query$Issues$repository$issues$edges$node<TRes> {
@@ -1227,33 +1192,37 @@ class _CopyWithImpl$Query$Issues$repository$issues$edges$node<TRes>
     Object? createdAt = _undefined,
     Object? author = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues$edges$node(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        number: number == _undefined || number == null
-            ? _instance.number
-            : (number as int),
-        title: title == _undefined || title == null
-            ? _instance.title
-            : (title as String),
-        createdAt: createdAt == _undefined || createdAt == null
-            ? _instance.createdAt
-            : (createdAt as String),
-        author: author == _undefined
-            ? _instance.author
-            : (author as Query$Issues$repository$issues$edges$node$author?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$Issues$repository$issues$edges$node(
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      number: number == _undefined || number == null
+          ? _instance.number
+          : (number as int),
+      title: title == _undefined || title == null
+          ? _instance.title
+          : (title as String),
+      createdAt: createdAt == _undefined || createdAt == null
+          ? _instance.createdAt
+          : (createdAt as String),
+      author: author == _undefined
+          ? _instance.author
+          : (author as Query$Issues$repository$issues$edges$node$author?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$Issues$repository$issues$edges$node$author<TRes> get author {
     final local$author = _instance.author;
     return local$author == null
         ? CopyWith$Query$Issues$repository$issues$edges$node$author.stub(
-            _then(_instance))
+            _then(_instance),
+          )
         : CopyWith$Query$Issues$repository$issues$edges$node$author(
-            local$author, (e) => call(author: e));
+            local$author,
+            (e) => call(author: e),
+          );
   }
 }
 
@@ -1270,8 +1239,7 @@ class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node<TRes>
     String? createdAt,
     Query$Issues$repository$issues$edges$node$author? author,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$Issues$repository$issues$edges$node$author<TRes> get author =>
       CopyWith$Query$Issues$repository$issues$edges$node$author.stub(_res);
@@ -1284,27 +1252,33 @@ class Query$Issues$repository$issues$edges$node$author {
   });
 
   factory Query$Issues$repository$issues$edges$node$author.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     switch (json["__typename"] as String) {
       case "Bot":
         return Query$Issues$repository$issues$edges$node$author$$Bot.fromJson(
-            json);
+          json,
+        );
 
       case "EnterpriseUserAccount":
-        return Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
-            .fromJson(json);
+        return Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount.fromJson(
+          json,
+        );
 
       case "Mannequin":
-        return Query$Issues$repository$issues$edges$node$author$$Mannequin
-            .fromJson(json);
+        return Query$Issues$repository$issues$edges$node$author$$Mannequin.fromJson(
+          json,
+        );
 
       case "Organization":
-        return Query$Issues$repository$issues$edges$node$author$$Organization
-            .fromJson(json);
+        return Query$Issues$repository$issues$edges$node$author$$Organization.fromJson(
+          json,
+        );
 
       case "User":
         return Query$Issues$repository$issues$edges$node$author$$User.fromJson(
-            json);
+          json,
+        );
 
       default:
         final l$login = json['login'];
@@ -1333,10 +1307,7 @@ class Query$Issues$repository$issues$edges$node$author {
   int get hashCode {
     final l$login = login;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$login,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$login, l$$__typename]);
   }
 
   @override
@@ -1365,47 +1336,56 @@ class Query$Issues$repository$issues$edges$node$author {
 extension UtilityExtension$Query$Issues$repository$issues$edges$node$author
     on Query$Issues$repository$issues$edges$node$author {
   CopyWith$Query$Issues$repository$issues$edges$node$author<
-          Query$Issues$repository$issues$edges$node$author>
-      get copyWith => CopyWith$Query$Issues$repository$issues$edges$node$author(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges$node$author
+  >
+  get copyWith =>
+      CopyWith$Query$Issues$repository$issues$edges$node$author(this, (i) => i);
   _T when<_T>({
     required _T Function(Query$Issues$repository$issues$edges$node$author$$Bot)
-        bot,
+    bot,
     required _T Function(
-            Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount)
-        enterpriseUserAccount,
+      Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount,
+    )
+    enterpriseUserAccount,
     required _T Function(
-            Query$Issues$repository$issues$edges$node$author$$Mannequin)
-        mannequin,
+      Query$Issues$repository$issues$edges$node$author$$Mannequin,
+    )
+    mannequin,
     required _T Function(
-            Query$Issues$repository$issues$edges$node$author$$Organization)
-        organization,
+      Query$Issues$repository$issues$edges$node$author$$Organization,
+    )
+    organization,
     required _T Function(Query$Issues$repository$issues$edges$node$author$$User)
-        user,
+    user,
     required _T Function() orElse,
   }) {
     switch ($__typename) {
       case "Bot":
         return bot(
-            this as Query$Issues$repository$issues$edges$node$author$$Bot);
+          this as Query$Issues$repository$issues$edges$node$author$$Bot,
+        );
 
       case "EnterpriseUserAccount":
-        return enterpriseUserAccount(this
-            as Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount);
+        return enterpriseUserAccount(
+          this
+              as Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount,
+        );
 
       case "Mannequin":
-        return mannequin(this
-            as Query$Issues$repository$issues$edges$node$author$$Mannequin);
+        return mannequin(
+          this as Query$Issues$repository$issues$edges$node$author$$Mannequin,
+        );
 
       case "Organization":
-        return organization(this
-            as Query$Issues$repository$issues$edges$node$author$$Organization);
+        return organization(
+          this
+              as Query$Issues$repository$issues$edges$node$author$$Organization,
+        );
 
       case "User":
         return user(
-            this as Query$Issues$repository$issues$edges$node$author$$User);
+          this as Query$Issues$repository$issues$edges$node$author$$User,
+        );
 
       default:
         return orElse();
@@ -1415,12 +1395,13 @@ extension UtilityExtension$Query$Issues$repository$issues$edges$node$author
   _T maybeWhen<_T>({
     _T Function(Query$Issues$repository$issues$edges$node$author$$Bot)? bot,
     _T Function(
-            Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount)?
-        enterpriseUserAccount,
+      Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount,
+    )?
+    enterpriseUserAccount,
     _T Function(Query$Issues$repository$issues$edges$node$author$$Mannequin)?
-        mannequin,
+    mannequin,
     _T Function(Query$Issues$repository$issues$edges$node$author$$Organization)?
-        organization,
+    organization,
     _T Function(Query$Issues$repository$issues$edges$node$author$$User)? user,
     required _T Function() orElse,
   }) {
@@ -1428,31 +1409,37 @@ extension UtilityExtension$Query$Issues$repository$issues$edges$node$author
       case "Bot":
         if (bot != null) {
           return bot(
-              this as Query$Issues$repository$issues$edges$node$author$$Bot);
+            this as Query$Issues$repository$issues$edges$node$author$$Bot,
+          );
         } else {
           return orElse();
         }
 
       case "EnterpriseUserAccount":
         if (enterpriseUserAccount != null) {
-          return enterpriseUserAccount(this
-              as Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount);
+          return enterpriseUserAccount(
+            this
+                as Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount,
+          );
         } else {
           return orElse();
         }
 
       case "Mannequin":
         if (mannequin != null) {
-          return mannequin(this
-              as Query$Issues$repository$issues$edges$node$author$$Mannequin);
+          return mannequin(
+            this as Query$Issues$repository$issues$edges$node$author$$Mannequin,
+          );
         } else {
           return orElse();
         }
 
       case "Organization":
         if (organization != null) {
-          return organization(this
-              as Query$Issues$repository$issues$edges$node$author$$Organization);
+          return organization(
+            this
+                as Query$Issues$repository$issues$edges$node$author$$Organization,
+          );
         } else {
           return orElse();
         }
@@ -1460,7 +1447,8 @@ extension UtilityExtension$Query$Issues$repository$issues$edges$node$author
       case "User":
         if (user != null) {
           return user(
-              this as Query$Issues$repository$issues$edges$node$author$$User);
+            this as Query$Issues$repository$issues$edges$node$author$$User,
+          );
         } else {
           return orElse();
         }
@@ -1478,13 +1466,10 @@ abstract class CopyWith$Query$Issues$repository$issues$edges$node$author<TRes> {
   ) = _CopyWithImpl$Query$Issues$repository$issues$edges$node$author;
 
   factory CopyWith$Query$Issues$repository$issues$edges$node$author.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author;
 
-  TRes call({
-    String? login,
-    String? $__typename,
-  });
+  TRes call({String? login, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author<TRes>
@@ -1500,18 +1485,17 @@ class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? login = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues$edges$node$author(
-        login: login == _undefined || login == null
-            ? _instance.login
-            : (login as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? login = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Issues$repository$issues$edges$node$author(
+          login: login == _undefined || login == null
+              ? _instance.login
+              : (login as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author<TRes>
@@ -1520,11 +1504,7 @@ class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author<TRes>
 
   TRes _res;
 
-  call({
-    String? login,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? login, String? $__typename}) => _res;
 }
 
 class Query$Issues$repository$issues$edges$node$author$$Bot
@@ -1535,7 +1515,8 @@ class Query$Issues$repository$issues$edges$node$author$$Bot
   });
 
   factory Query$Issues$repository$issues$edges$node$author$$Bot.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$login = json['login'];
     final l$$__typename = json['__typename'];
     return Query$Issues$repository$issues$edges$node$author$$Bot(
@@ -1561,10 +1542,7 @@ class Query$Issues$repository$issues$edges$node$author$$Bot
   int get hashCode {
     final l$login = login;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$login,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$login, l$$__typename]);
   }
 
   @override
@@ -1593,29 +1571,28 @@ class Query$Issues$repository$issues$edges$node$author$$Bot
 extension UtilityExtension$Query$Issues$repository$issues$edges$node$author$$Bot
     on Query$Issues$repository$issues$edges$node$author$$Bot {
   CopyWith$Query$Issues$repository$issues$edges$node$author$$Bot<
-          Query$Issues$repository$issues$edges$node$author$$Bot>
-      get copyWith =>
-          CopyWith$Query$Issues$repository$issues$edges$node$author$$Bot(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges$node$author$$Bot
+  >
+  get copyWith =>
+      CopyWith$Query$Issues$repository$issues$edges$node$author$$Bot(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Issues$repository$issues$edges$node$author$$Bot<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$Bot(
     Query$Issues$repository$issues$edges$node$author$$Bot instance,
     TRes Function(Query$Issues$repository$issues$edges$node$author$$Bot) then,
   ) = _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Bot;
 
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$Bot.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Bot;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Bot;
 
-  TRes call({
-    String? login,
-    String? $__typename,
-  });
+  TRes call({String? login, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Bot<TRes>
@@ -1629,38 +1606,35 @@ class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Bot<TRes>
   final Query$Issues$repository$issues$edges$node$author$$Bot _instance;
 
   final TRes Function(Query$Issues$repository$issues$edges$node$author$$Bot)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? login = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues$edges$node$author$$Bot(
-        login: login == _undefined || login == null
-            ? _instance.login
-            : (login as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? login = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Issues$repository$issues$edges$node$author$$Bot(
+          login: login == _undefined || login == null
+              ? _instance.login
+              : (login as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Bot<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$Bot<TRes> {
   _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Bot(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? login,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? login, String? $__typename}) => _res;
 }
 
 class Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
@@ -1671,7 +1645,8 @@ class Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
   });
 
   factory Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$login = json['login'];
     final l$$__typename = json['__typename'];
     return Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
@@ -1697,10 +1672,7 @@ class Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
   int get hashCode {
     final l$login = login;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$login,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$login, l$$__typename]);
   }
 
   @override
@@ -1730,83 +1702,83 @@ class Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
 extension UtilityExtension$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
     on Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount {
   CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount<
-          Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount>
-      get copyWith =>
-          CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
+  >
+  get copyWith =>
+      CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
     Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
-        instance,
+    instance,
     TRes Function(
-            Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount)
-        then,
+      Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount,
+    )
+    then,
   ) = _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount;
 
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount;
 
-  TRes call({
-    String? login,
-    String? $__typename,
-  });
+  TRes call({String? login, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
     this._instance,
     this._then,
   );
 
   final Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount)
-      _then;
+    Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? login = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
+  TRes call({Object? login = _undefined, Object? $__typename = _undefined}) =>
       _then(
-          Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
-        login: login == _undefined || login == null
-            ? _instance.login
-            : (login as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+        Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
+          login: login == _undefined || login == null
+              ? _instance.login
+              : (login as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$EnterpriseUserAccount(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? login,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? login, String? $__typename}) => _res;
 }
 
 class Query$Issues$repository$issues$edges$node$author$$Mannequin
@@ -1817,7 +1789,8 @@ class Query$Issues$repository$issues$edges$node$author$$Mannequin
   });
 
   factory Query$Issues$repository$issues$edges$node$author$$Mannequin.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$login = json['login'];
     final l$$__typename = json['__typename'];
     return Query$Issues$repository$issues$edges$node$author$$Mannequin(
@@ -1843,10 +1816,7 @@ class Query$Issues$repository$issues$edges$node$author$$Mannequin
   int get hashCode {
     final l$login = login;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$login,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$login, l$$__typename]);
   }
 
   @override
@@ -1875,37 +1845,38 @@ class Query$Issues$repository$issues$edges$node$author$$Mannequin
 extension UtilityExtension$Query$Issues$repository$issues$edges$node$author$$Mannequin
     on Query$Issues$repository$issues$edges$node$author$$Mannequin {
   CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin<
-          Query$Issues$repository$issues$edges$node$author$$Mannequin>
-      get copyWith =>
-          CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges$node$author$$Mannequin
+  >
+  get copyWith =>
+      CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin(
     Query$Issues$repository$issues$edges$node$author$$Mannequin instance,
     TRes Function(Query$Issues$repository$issues$edges$node$author$$Mannequin)
-        then,
+    then,
   ) = _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin;
 
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin;
 
-  TRes call({
-    String? login,
-    String? $__typename,
-  });
+  TRes call({String? login, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin(
     this._instance,
     this._then,
@@ -1914,39 +1885,39 @@ class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin<
   final Query$Issues$repository$issues$edges$node$author$$Mannequin _instance;
 
   final TRes Function(
-      Query$Issues$repository$issues$edges$node$author$$Mannequin) _then;
+    Query$Issues$repository$issues$edges$node$author$$Mannequin,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? login = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues$edges$node$author$$Mannequin(
-        login: login == _undefined || login == null
-            ? _instance.login
-            : (login as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? login = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Issues$repository$issues$edges$node$author$$Mannequin(
+          login: login == _undefined || login == null
+              ? _instance.login
+              : (login as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$Mannequin<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Mannequin(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? login,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? login, String? $__typename}) => _res;
 }
 
 class Query$Issues$repository$issues$edges$node$author$$Organization
@@ -1957,7 +1928,8 @@ class Query$Issues$repository$issues$edges$node$author$$Organization
   });
 
   factory Query$Issues$repository$issues$edges$node$author$$Organization.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$login = json['login'];
     final l$$__typename = json['__typename'];
     return Query$Issues$repository$issues$edges$node$author$$Organization(
@@ -1983,10 +1955,7 @@ class Query$Issues$repository$issues$edges$node$author$$Organization
   int get hashCode {
     final l$login = login;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$login,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$login, l$$__typename]);
   }
 
   @override
@@ -2016,80 +1985,82 @@ class Query$Issues$repository$issues$edges$node$author$$Organization
 extension UtilityExtension$Query$Issues$repository$issues$edges$node$author$$Organization
     on Query$Issues$repository$issues$edges$node$author$$Organization {
   CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization<
-          Query$Issues$repository$issues$edges$node$author$$Organization>
-      get copyWith =>
-          CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges$node$author$$Organization
+  >
+  get copyWith =>
+      CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization(
     Query$Issues$repository$issues$edges$node$author$$Organization instance,
     TRes Function(
-            Query$Issues$repository$issues$edges$node$author$$Organization)
-        then,
+      Query$Issues$repository$issues$edges$node$author$$Organization,
+    )
+    then,
   ) = _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Organization;
 
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Organization;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Organization;
 
-  TRes call({
-    String? login,
-    String? $__typename,
-  });
+  TRes call({String? login, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Organization<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$Organization(
     this._instance,
     this._then,
   );
 
   final Query$Issues$repository$issues$edges$node$author$$Organization
-      _instance;
+  _instance;
 
   final TRes Function(
-      Query$Issues$repository$issues$edges$node$author$$Organization) _then;
+    Query$Issues$repository$issues$edges$node$author$$Organization,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? login = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues$edges$node$author$$Organization(
-        login: login == _undefined || login == null
-            ? _instance.login
-            : (login as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? login = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Issues$repository$issues$edges$node$author$$Organization(
+          login: login == _undefined || login == null
+              ? _instance.login
+              : (login as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Organization<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$Organization<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$Organization(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? login,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? login, String? $__typename}) => _res;
 }
 
 class Query$Issues$repository$issues$edges$node$author$$User
@@ -2100,7 +2071,8 @@ class Query$Issues$repository$issues$edges$node$author$$User
   });
 
   factory Query$Issues$repository$issues$edges$node$author$$User.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$login = json['login'];
     final l$$__typename = json['__typename'];
     return Query$Issues$repository$issues$edges$node$author$$User(
@@ -2126,10 +2098,7 @@ class Query$Issues$repository$issues$edges$node$author$$User
   int get hashCode {
     final l$login = login;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$login,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$login, l$$__typename]);
   }
 
   @override
@@ -2158,29 +2127,28 @@ class Query$Issues$repository$issues$edges$node$author$$User
 extension UtilityExtension$Query$Issues$repository$issues$edges$node$author$$User
     on Query$Issues$repository$issues$edges$node$author$$User {
   CopyWith$Query$Issues$repository$issues$edges$node$author$$User<
-          Query$Issues$repository$issues$edges$node$author$$User>
-      get copyWith =>
-          CopyWith$Query$Issues$repository$issues$edges$node$author$$User(
-            this,
-            (i) => i,
-          );
+    Query$Issues$repository$issues$edges$node$author$$User
+  >
+  get copyWith =>
+      CopyWith$Query$Issues$repository$issues$edges$node$author$$User(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$Issues$repository$issues$edges$node$author$$User<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$User(
     Query$Issues$repository$issues$edges$node$author$$User instance,
     TRes Function(Query$Issues$repository$issues$edges$node$author$$User) then,
   ) = _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$User;
 
   factory CopyWith$Query$Issues$repository$issues$edges$node$author$$User.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$User;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$User;
 
-  TRes call({
-    String? login,
-    String? $__typename,
-  });
+  TRes call({String? login, String? $__typename});
 }
 
 class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$User<TRes>
@@ -2194,36 +2162,33 @@ class _CopyWithImpl$Query$Issues$repository$issues$edges$node$author$$User<TRes>
   final Query$Issues$repository$issues$edges$node$author$$User _instance;
 
   final TRes Function(Query$Issues$repository$issues$edges$node$author$$User)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? login = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$Issues$repository$issues$edges$node$author$$User(
-        login: login == _undefined || login == null
-            ? _instance.login
-            : (login as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? login = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$Issues$repository$issues$edges$node$author$$User(
+          login: login == _undefined || login == null
+              ? _instance.login
+              : (login as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$User<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$Issues$repository$issues$edges$node$author$$User<TRes> {
   _CopyWithStubImpl$Query$Issues$repository$issues$edges$node$author$$User(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? login,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? login, String? $__typename}) => _res;
 }

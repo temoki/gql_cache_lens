@@ -15,7 +15,8 @@ part 'issues.query.data.gql.g.dart';
 abstract class GIssuesData implements Built<GIssuesData, GIssuesDataBuilder> {
   GIssuesData._();
 
-  factory GIssuesData([Function(GIssuesDataBuilder b) updates]) = _$GIssuesData;
+  factory GIssuesData([void Function(GIssuesDataBuilder b) updates]) =
+      _$GIssuesData;
 
   static void _initializeBuilder(GIssuesDataBuilder b) =>
       b..G__typename = 'Query';
@@ -42,7 +43,7 @@ abstract class GIssuesData_repository
   GIssuesData_repository._();
 
   factory GIssuesData_repository(
-          [Function(GIssuesData_repositoryBuilder b) updates]) =
+          [void Function(GIssuesData_repositoryBuilder b) updates]) =
       _$GIssuesData_repository;
 
   static void _initializeBuilder(GIssuesData_repositoryBuilder b) =>
@@ -74,7 +75,7 @@ abstract class GIssuesData_repository_issues
   GIssuesData_repository_issues._();
 
   factory GIssuesData_repository_issues(
-          [Function(GIssuesData_repository_issuesBuilder b) updates]) =
+          [void Function(GIssuesData_repository_issuesBuilder b) updates]) =
       _$GIssuesData_repository_issues;
 
   static void _initializeBuilder(GIssuesData_repository_issuesBuilder b) =>
@@ -105,8 +106,8 @@ abstract class GIssuesData_repository_issues_edges
   GIssuesData_repository_issues_edges._();
 
   factory GIssuesData_repository_issues_edges(
-          [Function(GIssuesData_repository_issues_edgesBuilder b) updates]) =
-      _$GIssuesData_repository_issues_edges;
+      [void Function(GIssuesData_repository_issues_edgesBuilder b)
+          updates]) = _$GIssuesData_repository_issues_edges;
 
   static void _initializeBuilder(
           GIssuesData_repository_issues_edgesBuilder b) =>
@@ -138,7 +139,7 @@ abstract class GIssuesData_repository_issues_edges_node
   GIssuesData_repository_issues_edges_node._();
 
   factory GIssuesData_repository_issues_edges_node(
-      [Function(GIssuesData_repository_issues_edges_nodeBuilder b)
+      [void Function(GIssuesData_repository_issues_edges_nodeBuilder b)
           updates]) = _$GIssuesData_repository_issues_edges_node;
 
   static void _initializeBuilder(
@@ -175,7 +176,7 @@ abstract class GIssuesData_repository_issues_edges_node_author
   GIssuesData_repository_issues_edges_node_author._();
 
   factory GIssuesData_repository_issues_edges_node_author(
-      [Function(GIssuesData_repository_issues_edges_node_authorBuilder b)
+      [void Function(GIssuesData_repository_issues_edges_node_authorBuilder b)
           updates]) = _$GIssuesData_repository_issues_edges_node_author;
 
   static void _initializeBuilder(

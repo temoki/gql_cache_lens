@@ -637,7 +637,7 @@ import 'package:github_issue_app/src/graphql/gen/ferry/schema.schema.gql.dart'
         GWorkflowState,
         GWorkflowsParametersInput,
         GX509Certificate;
-import 'package:gql_code_builder/src/serializers/operation_serializer.dart'
+import 'package:gql_code_builder_serializers/gql_code_builder_serializers.dart'
     show OperationSerializer;
 
 part 'serializers.gql.g.dart';

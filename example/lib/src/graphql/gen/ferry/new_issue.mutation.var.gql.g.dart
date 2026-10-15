@@ -7,7 +7,7 @@ part of 'new_issue.mutation.var.gql.dart';
 // **************************************************************************
 
 Serializer<GNewIssueVars> _$gNewIssueVarsSerializer =
-    new _$GNewIssueVarsSerializer();
+    _$GNewIssueVarsSerializer();
 
 class _$GNewIssueVarsSerializer implements StructuredSerializer<GNewIssueVars> {
   @override
@@ -16,32 +16,42 @@ class _$GNewIssueVarsSerializer implements StructuredSerializer<GNewIssueVars> {
   final String wireName = 'GNewIssueVars';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GNewIssueVars object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GNewIssueVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       'repositoryId',
-      serializers.serialize(object.repositoryId,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.repositoryId,
+        specifiedType: const FullType(String),
+      ),
       'title',
-      serializers.serialize(object.title,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.title,
+        specifiedType: const FullType(String),
+      ),
     ];
     Object? value;
     value = object.body;
     if (value != null) {
       result
         ..add('body')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(
+          serializers.serialize(value, specifiedType: const FullType(String)),
+        );
     }
     return result;
   }
 
   @override
   GNewIssueVars deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GNewIssueVarsBuilder();
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GNewIssueVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -50,16 +60,28 @@ class _$GNewIssueVarsSerializer implements StructuredSerializer<GNewIssueVars> {
       final Object? value = iterator.current;
       switch (key) {
         case 'repositoryId':
-          result.repositoryId = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.repositoryId =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'title':
-          result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.title =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'body':
-          result.body = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.body =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String?;
           break;
       }
     }
@@ -77,22 +99,19 @@ class _$GNewIssueVars extends GNewIssueVars {
   final String? body;
 
   factory _$GNewIssueVars([void Function(GNewIssueVarsBuilder)? updates]) =>
-      (new GNewIssueVarsBuilder()..update(updates))._build();
+      (GNewIssueVarsBuilder()..update(updates))._build();
 
-  _$GNewIssueVars._(
-      {required this.repositoryId, required this.title, this.body})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        repositoryId, r'GNewIssueVars', 'repositoryId');
-    BuiltValueNullFieldError.checkNotNull(title, r'GNewIssueVars', 'title');
-  }
-
+  _$GNewIssueVars._({
+    required this.repositoryId,
+    required this.title,
+    this.body,
+  }) : super._();
   @override
   GNewIssueVars rebuild(void Function(GNewIssueVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GNewIssueVarsBuilder toBuilder() => new GNewIssueVarsBuilder()..replace(this);
+  GNewIssueVarsBuilder toBuilder() => GNewIssueVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -154,7 +173,6 @@ class GNewIssueVarsBuilder
 
   @override
   void replace(GNewIssueVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GNewIssueVars;
   }
 
@@ -167,12 +185,19 @@ class GNewIssueVarsBuilder
   GNewIssueVars build() => _build();
 
   _$GNewIssueVars _build() {
-    final _$result = _$v ??
-        new _$GNewIssueVars._(
+    final _$result =
+        _$v ??
+        _$GNewIssueVars._(
           repositoryId: BuiltValueNullFieldError.checkNotNull(
-              repositoryId, r'GNewIssueVars', 'repositoryId'),
+            repositoryId,
+            r'GNewIssueVars',
+            'repositoryId',
+          ),
           title: BuiltValueNullFieldError.checkNotNull(
-              title, r'GNewIssueVars', 'title'),
+            title,
+            r'GNewIssueVars',
+            'title',
+          ),
           body: body,
         );
     replace(_$result);

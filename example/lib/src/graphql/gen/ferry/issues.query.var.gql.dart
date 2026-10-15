@@ -12,7 +12,8 @@ part 'issues.query.var.gql.g.dart';
 abstract class GIssuesVars implements Built<GIssuesVars, GIssuesVarsBuilder> {
   GIssuesVars._();
 
-  factory GIssuesVars([Function(GIssuesVarsBuilder b) updates]) = _$GIssuesVars;
+  factory GIssuesVars([void Function(GIssuesVarsBuilder b) updates]) =
+      _$GIssuesVars;
 
   String get owner;
   String get name;

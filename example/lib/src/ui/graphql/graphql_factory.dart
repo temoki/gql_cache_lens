@@ -14,7 +14,7 @@ final class GraphqlFactory implements UiFactory {
     required this.repositoryOwner,
     required this.repositoryName,
   }) {
-    final authLink = AuthLink(getToken: () async => 'Bearer $githubToken');
+    final authLink = AuthLink(getToken: () => 'Bearer $githubToken');
     final httpLink = HttpLink(githubApiUrl);
     final link = authLink.concat(httpLink);
     final store = InMemoryStore();

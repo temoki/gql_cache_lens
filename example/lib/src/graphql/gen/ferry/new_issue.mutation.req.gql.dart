@@ -23,7 +23,7 @@ abstract class GNewIssueReq
         _i1.OperationRequest<_i2.GNewIssueData, _i3.GNewIssueVars> {
   GNewIssueReq._();
 
-  factory GNewIssueReq([Function(GNewIssueReqBuilder b) updates]) =
+  factory GNewIssueReq([void Function(GNewIssueReqBuilder b) updates]) =
       _$GNewIssueReq;
 
   static void _initializeBuilder(GNewIssueReqBuilder b) => b
@@ -41,6 +41,7 @@ abstract class GNewIssueReq
   _i4.Request get execRequest => _i4.Request(
         operation: operation,
         variables: vars.toJson(),
+        context: context ?? const _i4.Context(),
       );
 
   @override
@@ -61,6 +62,9 @@ abstract class GNewIssueReq
   _i1.FetchPolicy? get fetchPolicy;
   @override
   bool get executeOnListen;
+  @override
+  @BuiltValueField(serialize: false)
+  _i4.Context? get context;
   @override
   _i2.GNewIssueData? parseData(Map<String, dynamic> json) =>
       _i2.GNewIssueData.fromJson(json);

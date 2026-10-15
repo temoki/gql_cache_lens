@@ -13,7 +13,7 @@ abstract class GNewIssueData
     implements Built<GNewIssueData, GNewIssueDataBuilder> {
   GNewIssueData._();
 
-  factory GNewIssueData([Function(GNewIssueDataBuilder b) updates]) =
+  factory GNewIssueData([void Function(GNewIssueDataBuilder b) updates]) =
       _$GNewIssueData;
 
   static void _initializeBuilder(GNewIssueDataBuilder b) =>
@@ -42,7 +42,7 @@ abstract class GNewIssueData_createIssue
   GNewIssueData_createIssue._();
 
   factory GNewIssueData_createIssue(
-          [Function(GNewIssueData_createIssueBuilder b) updates]) =
+          [void Function(GNewIssueData_createIssueBuilder b) updates]) =
       _$GNewIssueData_createIssue;
 
   static void _initializeBuilder(GNewIssueData_createIssueBuilder b) =>
@@ -73,7 +73,7 @@ abstract class GNewIssueData_createIssue_issue
   GNewIssueData_createIssue_issue._();
 
   factory GNewIssueData_createIssue_issue(
-          [Function(GNewIssueData_createIssue_issueBuilder b) updates]) =
+          [void Function(GNewIssueData_createIssue_issueBuilder b) updates]) =
       _$GNewIssueData_createIssue_issue;
 
   static void _initializeBuilder(GNewIssueData_createIssue_issueBuilder b) =>

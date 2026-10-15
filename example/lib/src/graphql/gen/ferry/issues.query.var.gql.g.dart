@@ -6,7 +6,7 @@ part of 'issues.query.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GIssuesVars> _$gIssuesVarsSerializer = new _$GIssuesVarsSerializer();
+Serializer<GIssuesVars> _$gIssuesVarsSerializer = _$GIssuesVarsSerializer();
 
 class _$GIssuesVarsSerializer implements StructuredSerializer<GIssuesVars> {
   @override
@@ -15,12 +15,17 @@ class _$GIssuesVarsSerializer implements StructuredSerializer<GIssuesVars> {
   final String wireName = 'GIssuesVars';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GIssuesVars object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(
+    Serializers serializers,
+    GIssuesVars object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
     final result = <Object?>[
       'owner',
-      serializers.serialize(object.owner,
-          specifiedType: const FullType(String)),
+      serializers.serialize(
+        object.owner,
+        specifiedType: const FullType(String),
+      ),
       'name',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
     ];
@@ -29,9 +34,12 @@ class _$GIssuesVarsSerializer implements StructuredSerializer<GIssuesVars> {
   }
 
   @override
-  GIssuesVars deserialize(Serializers serializers, Iterable<Object?> serialized,
-      {FullType specifiedType = FullType.unspecified}) {
-    final result = new GIssuesVarsBuilder();
+  GIssuesVars deserialize(
+    Serializers serializers,
+    Iterable<Object?> serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = GIssuesVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -40,12 +48,20 @@ class _$GIssuesVarsSerializer implements StructuredSerializer<GIssuesVars> {
       final Object? value = iterator.current;
       switch (key) {
         case 'owner':
-          result.owner = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.owner =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
         case 'name':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
+          result.name =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )!
+                  as String;
           break;
       }
     }
@@ -61,19 +77,15 @@ class _$GIssuesVars extends GIssuesVars {
   final String name;
 
   factory _$GIssuesVars([void Function(GIssuesVarsBuilder)? updates]) =>
-      (new GIssuesVarsBuilder()..update(updates))._build();
+      (GIssuesVarsBuilder()..update(updates))._build();
 
-  _$GIssuesVars._({required this.owner, required this.name}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(owner, r'GIssuesVars', 'owner');
-    BuiltValueNullFieldError.checkNotNull(name, r'GIssuesVars', 'name');
-  }
-
+  _$GIssuesVars._({required this.owner, required this.name}) : super._();
   @override
   GIssuesVars rebuild(void Function(GIssuesVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GIssuesVarsBuilder toBuilder() => new GIssuesVarsBuilder()..replace(this);
+  GIssuesVarsBuilder toBuilder() => GIssuesVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -124,7 +136,6 @@ class GIssuesVarsBuilder implements Builder<GIssuesVars, GIssuesVarsBuilder> {
 
   @override
   void replace(GIssuesVars other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$GIssuesVars;
   }
 
@@ -137,12 +148,19 @@ class GIssuesVarsBuilder implements Builder<GIssuesVars, GIssuesVarsBuilder> {
   GIssuesVars build() => _build();
 
   _$GIssuesVars _build() {
-    final _$result = _$v ??
-        new _$GIssuesVars._(
+    final _$result =
+        _$v ??
+        _$GIssuesVars._(
           owner: BuiltValueNullFieldError.checkNotNull(
-              owner, r'GIssuesVars', 'owner'),
+            owner,
+            r'GIssuesVars',
+            'owner',
+          ),
           name: BuiltValueNullFieldError.checkNotNull(
-              name, r'GIssuesVars', 'name'),
+            name,
+            r'GIssuesVars',
+            'name',
+          ),
         );
     replace(_$result);
     return _$result;

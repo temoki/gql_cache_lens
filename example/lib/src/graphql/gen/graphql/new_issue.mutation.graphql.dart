@@ -9,12 +9,11 @@ class Variables$Mutation$NewIssue {
     required String repositoryId,
     required String title,
     String? body,
-  }) =>
-      Variables$Mutation$NewIssue._({
-        r'repositoryId': repositoryId,
-        r'title': title,
-        if (body != null) r'body': body,
-      });
+  }) => Variables$Mutation$NewIssue._({
+    r'repositoryId': repositoryId,
+    r'title': title,
+    if (body != null) r'body': body,
+  });
 
   Variables$Mutation$NewIssue._(this._$data);
 
@@ -53,10 +52,7 @@ class Variables$Mutation$NewIssue {
   }
 
   CopyWith$Variables$Mutation$NewIssue<Variables$Mutation$NewIssue>
-      get copyWith => CopyWith$Variables$Mutation$NewIssue(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Mutation$NewIssue(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -110,19 +106,12 @@ abstract class CopyWith$Variables$Mutation$NewIssue<TRes> {
   factory CopyWith$Variables$Mutation$NewIssue.stub(TRes res) =
       _CopyWithStubImpl$Variables$Mutation$NewIssue;
 
-  TRes call({
-    String? repositoryId,
-    String? title,
-    String? body,
-  });
+  TRes call({String? repositoryId, String? title, String? body});
 }
 
 class _CopyWithImpl$Variables$Mutation$NewIssue<TRes>
     implements CopyWith$Variables$Mutation$NewIssue<TRes> {
-  _CopyWithImpl$Variables$Mutation$NewIssue(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Mutation$NewIssue(this._instance, this._then);
 
   final Variables$Mutation$NewIssue _instance;
 
@@ -134,14 +123,15 @@ class _CopyWithImpl$Variables$Mutation$NewIssue<TRes>
     Object? repositoryId = _undefined,
     Object? title = _undefined,
     Object? body = _undefined,
-  }) =>
-      _then(Variables$Mutation$NewIssue._({
-        ..._instance._$data,
-        if (repositoryId != _undefined && repositoryId != null)
-          'repositoryId': (repositoryId as String),
-        if (title != _undefined && title != null) 'title': (title as String),
-        if (body != _undefined) 'body': (body as String?),
-      }));
+  }) => _then(
+    Variables$Mutation$NewIssue._({
+      ..._instance._$data,
+      if (repositoryId != _undefined && repositoryId != null)
+        'repositoryId': (repositoryId as String),
+      if (title != _undefined && title != null) 'title': (title as String),
+      if (body != _undefined) 'body': (body as String?),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Mutation$NewIssue<TRes>
@@ -150,19 +140,11 @@ class _CopyWithStubImpl$Variables$Mutation$NewIssue<TRes>
 
   TRes _res;
 
-  call({
-    String? repositoryId,
-    String? title,
-    String? body,
-  }) =>
-      _res;
+  call({String? repositoryId, String? title, String? body}) => _res;
 }
 
 class Mutation$NewIssue {
-  Mutation$NewIssue({
-    this.createIssue,
-    this.$__typename = 'Mutation',
-  });
+  Mutation$NewIssue({this.createIssue, this.$__typename = 'Mutation'});
 
   factory Mutation$NewIssue.fromJson(Map<String, dynamic> json) {
     final l$createIssue = json['createIssue'];
@@ -171,7 +153,8 @@ class Mutation$NewIssue {
       createIssue: l$createIssue == null
           ? null
           : Mutation$NewIssue$createIssue.fromJson(
-              (l$createIssue as Map<String, dynamic>)),
+              (l$createIssue as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -193,10 +176,7 @@ class Mutation$NewIssue {
   int get hashCode {
     final l$createIssue = createIssue;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$createIssue,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$createIssue, l$$__typename]);
   }
 
   @override
@@ -223,10 +203,7 @@ class Mutation$NewIssue {
 
 extension UtilityExtension$Mutation$NewIssue on Mutation$NewIssue {
   CopyWith$Mutation$NewIssue<Mutation$NewIssue> get copyWith =>
-      CopyWith$Mutation$NewIssue(
-        this,
-        (i) => i,
-      );
+      CopyWith$Mutation$NewIssue(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$NewIssue<TRes> {
@@ -238,19 +215,13 @@ abstract class CopyWith$Mutation$NewIssue<TRes> {
   factory CopyWith$Mutation$NewIssue.stub(TRes res) =
       _CopyWithStubImpl$Mutation$NewIssue;
 
-  TRes call({
-    Mutation$NewIssue$createIssue? createIssue,
-    String? $__typename,
-  });
+  TRes call({Mutation$NewIssue$createIssue? createIssue, String? $__typename});
   CopyWith$Mutation$NewIssue$createIssue<TRes> get createIssue;
 }
 
 class _CopyWithImpl$Mutation$NewIssue<TRes>
     implements CopyWith$Mutation$NewIssue<TRes> {
-  _CopyWithImpl$Mutation$NewIssue(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$NewIssue(this._instance, this._then);
 
   final Mutation$NewIssue _instance;
 
@@ -261,22 +232,25 @@ class _CopyWithImpl$Mutation$NewIssue<TRes>
   TRes call({
     Object? createIssue = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$NewIssue(
-        createIssue: createIssue == _undefined
-            ? _instance.createIssue
-            : (createIssue as Mutation$NewIssue$createIssue?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Mutation$NewIssue(
+      createIssue: createIssue == _undefined
+          ? _instance.createIssue
+          : (createIssue as Mutation$NewIssue$createIssue?),
+      $__typename: $__typename == _undefined || $__typename == null
+          ? _instance.$__typename
+          : ($__typename as String),
+    ),
+  );
 
   CopyWith$Mutation$NewIssue$createIssue<TRes> get createIssue {
     final local$createIssue = _instance.createIssue;
     return local$createIssue == null
         ? CopyWith$Mutation$NewIssue$createIssue.stub(_then(_instance))
         : CopyWith$Mutation$NewIssue$createIssue(
-            local$createIssue, (e) => call(createIssue: e));
+            local$createIssue,
+            (e) => call(createIssue: e),
+          );
   }
 }
 
@@ -286,96 +260,106 @@ class _CopyWithStubImpl$Mutation$NewIssue<TRes>
 
   TRes _res;
 
-  call({
-    Mutation$NewIssue$createIssue? createIssue,
-    String? $__typename,
-  }) =>
+  call({Mutation$NewIssue$createIssue? createIssue, String? $__typename}) =>
       _res;
 
   CopyWith$Mutation$NewIssue$createIssue<TRes> get createIssue =>
       CopyWith$Mutation$NewIssue$createIssue.stub(_res);
 }
 
-const documentNodeMutationNewIssue = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.mutation,
-    name: NameNode(value: 'NewIssue'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'repositoryId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'ID'),
-          isNonNull: true,
+const documentNodeMutationNewIssue = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.mutation,
+      name: NameNode(value: 'NewIssue'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'repositoryId')),
+          type: NamedTypeNode(name: NameNode(value: 'ID'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'title')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: true,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'title')),
+          type: NamedTypeNode(name: NameNode(value: 'String'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'body')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'String'),
-          isNonNull: false,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'body')),
+          type: NamedTypeNode(
+            name: NameNode(value: 'String'),
+            isNonNull: false,
+          ),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'createIssue'),
-        alias: null,
-        arguments: [
-          ArgumentNode(
-            name: NameNode(value: 'input'),
-            value: ObjectValueNode(fields: [
-              ObjectFieldNode(
-                name: NameNode(value: 'repositoryId'),
-                value: VariableNode(name: NameNode(value: 'repositoryId')),
-              ),
-              ObjectFieldNode(
-                name: NameNode(value: 'title'),
-                value: VariableNode(name: NameNode(value: 'title')),
-              ),
-              ObjectFieldNode(
-                name: NameNode(value: 'body'),
-                value: VariableNode(name: NameNode(value: 'body')),
-              ),
-            ]),
-          )
-        ],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'issue'),
+            name: NameNode(value: 'createIssue'),
             alias: null,
-            arguments: [],
+            arguments: [
+              ArgumentNode(
+                name: NameNode(value: 'input'),
+                value: ObjectValueNode(
+                  fields: [
+                    ObjectFieldNode(
+                      name: NameNode(value: 'repositoryId'),
+                      value: VariableNode(
+                        name: NameNode(value: 'repositoryId'),
+                      ),
+                    ),
+                    ObjectFieldNode(
+                      name: NameNode(value: 'title'),
+                      value: VariableNode(name: NameNode(value: 'title')),
+                    ),
+                    ObjectFieldNode(
+                      name: NameNode(value: 'body'),
+                      value: VariableNode(name: NameNode(value: 'body')),
+                    ),
+                  ],
+                ),
+              ),
+            ],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'id'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'issue'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
+                      FieldNode(
+                        name: NameNode(value: 'id'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                      FieldNode(
+                        name: NameNode(value: '__typename'),
+                        alias: null,
+                        arguments: [],
+                        directives: [],
+                        selectionSet: null,
+                      ),
+                    ],
+                  ),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -384,24 +368,15 @@ const documentNodeMutationNewIssue = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
+    ),
+  ],
+);
 Mutation$NewIssue _parserFn$Mutation$NewIssue(Map<String, dynamic> data) =>
     Mutation$NewIssue.fromJson(data);
-typedef OnMutationCompleted$Mutation$NewIssue = FutureOr<void> Function(
-  Map<String, dynamic>?,
-  Mutation$NewIssue?,
-);
+typedef OnMutationCompleted$Mutation$NewIssue =
+    FutureOr<void> Function(Map<String, dynamic>?, Mutation$NewIssue?);
 
 class Options$Mutation$NewIssue
     extends graphql.MutationOptions<Mutation$NewIssue> {
@@ -417,36 +392,36 @@ class Options$Mutation$NewIssue
     OnMutationCompleted$Mutation$NewIssue? onCompleted,
     graphql.OnMutationUpdate<Mutation$NewIssue>? update,
     graphql.OnError? onError,
-  })  : onCompletedWithParsed = onCompleted,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          onCompleted: onCompleted == null
-              ? null
-              : (data) => onCompleted(
-                    data,
-                    data == null ? null : _parserFn$Mutation$NewIssue(data),
-                  ),
-          update: update,
-          onError: onError,
-          document: documentNodeMutationNewIssue,
-          parserFn: _parserFn$Mutation$NewIssue,
-        );
+  }) : onCompletedWithParsed = onCompleted,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         onCompleted: onCompleted == null
+             ? null
+             : (data) => onCompleted(
+                 data,
+                 data == null ? null : _parserFn$Mutation$NewIssue(data),
+               ),
+         update: update,
+         onError: onError,
+         document: documentNodeMutationNewIssue,
+         parserFn: _parserFn$Mutation$NewIssue,
+       );
 
   final OnMutationCompleted$Mutation$NewIssue? onCompletedWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onCompleted == null
-            ? super.properties
-            : super.properties.where((property) => property != onCompleted),
-        onCompletedWithParsed,
-      ];
+    ...super.onCompleted == null
+        ? super.properties
+        : super.properties.where((property) => property != onCompleted),
+    onCompletedWithParsed,
+  ];
 }
 
 class WatchOptions$Mutation$NewIssue
@@ -465,59 +440,58 @@ class WatchOptions$Mutation$NewIssue
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeMutationNewIssue,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Mutation$NewIssue,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeMutationNewIssue,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Mutation$NewIssue,
+       );
 }
 
 extension ClientExtension$Mutation$NewIssue on graphql.GraphQLClient {
   Future<graphql.QueryResult<Mutation$NewIssue>> mutate$NewIssue(
-          Options$Mutation$NewIssue options) async =>
-      await this.mutate(options);
+    Options$Mutation$NewIssue options,
+  ) async => await this.mutate(options);
   graphql.ObservableQuery<Mutation$NewIssue> watchMutation$NewIssue(
-          WatchOptions$Mutation$NewIssue options) =>
-      this.watchMutation(options);
+    WatchOptions$Mutation$NewIssue options,
+  ) => this.watchMutation(options);
 }
 
 class Mutation$NewIssue$HookResult {
-  Mutation$NewIssue$HookResult(
-    this.runMutation,
-    this.result,
-  );
+  Mutation$NewIssue$HookResult(this.runMutation, this.result);
 
   final RunMutation$Mutation$NewIssue runMutation;
 
   final graphql.QueryResult<Mutation$NewIssue> result;
 }
 
-Mutation$NewIssue$HookResult useMutation$NewIssue(
-    [WidgetOptions$Mutation$NewIssue? options]) {
-  final result =
-      graphql_flutter.useMutation(options ?? WidgetOptions$Mutation$NewIssue());
+Mutation$NewIssue$HookResult useMutation$NewIssue([
+  WidgetOptions$Mutation$NewIssue? options,
+]) {
+  final result = graphql_flutter.useMutation(
+    options ?? WidgetOptions$Mutation$NewIssue(),
+  );
   return Mutation$NewIssue$HookResult(
     (variables, {optimisticResult, typedOptimisticResult}) =>
         result.runMutation(
-      variables.toJson(),
-      optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-    ),
+          variables.toJson(),
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+        ),
     result.result,
   );
 }
 
 graphql.ObservableQuery<Mutation$NewIssue> useWatchMutation$NewIssue(
-        WatchOptions$Mutation$NewIssue options) =>
-    graphql_flutter.useWatchMutation(options);
+  WatchOptions$Mutation$NewIssue options,
+) => graphql_flutter.useWatchMutation(options);
 
 class WidgetOptions$Mutation$NewIssue
     extends graphql.MutationOptions<Mutation$NewIssue> {
@@ -532,47 +506,48 @@ class WidgetOptions$Mutation$NewIssue
     OnMutationCompleted$Mutation$NewIssue? onCompleted,
     graphql.OnMutationUpdate<Mutation$NewIssue>? update,
     graphql.OnError? onError,
-  })  : onCompletedWithParsed = onCompleted,
-        super(
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          onCompleted: onCompleted == null
-              ? null
-              : (data) => onCompleted(
-                    data,
-                    data == null ? null : _parserFn$Mutation$NewIssue(data),
-                  ),
-          update: update,
-          onError: onError,
-          document: documentNodeMutationNewIssue,
-          parserFn: _parserFn$Mutation$NewIssue,
-        );
+  }) : onCompletedWithParsed = onCompleted,
+       super(
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         onCompleted: onCompleted == null
+             ? null
+             : (data) => onCompleted(
+                 data,
+                 data == null ? null : _parserFn$Mutation$NewIssue(data),
+               ),
+         update: update,
+         onError: onError,
+         document: documentNodeMutationNewIssue,
+         parserFn: _parserFn$Mutation$NewIssue,
+       );
 
   final OnMutationCompleted$Mutation$NewIssue? onCompletedWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onCompleted == null
-            ? super.properties
-            : super.properties.where((property) => property != onCompleted),
-        onCompletedWithParsed,
-      ];
+    ...super.onCompleted == null
+        ? super.properties
+        : super.properties.where((property) => property != onCompleted),
+    onCompletedWithParsed,
+  ];
 }
 
-typedef RunMutation$Mutation$NewIssue
-    = graphql.MultiSourceResult<Mutation$NewIssue> Function(
-  Variables$Mutation$NewIssue, {
-  Object? optimisticResult,
-  Mutation$NewIssue? typedOptimisticResult,
-});
-typedef Builder$Mutation$NewIssue = widgets.Widget Function(
-  RunMutation$Mutation$NewIssue,
-  graphql.QueryResult<Mutation$NewIssue>?,
-);
+typedef RunMutation$Mutation$NewIssue =
+    graphql.MultiSourceResult<Mutation$NewIssue> Function(
+      Variables$Mutation$NewIssue, {
+      Object? optimisticResult,
+      Mutation$NewIssue? typedOptimisticResult,
+    });
+typedef Builder$Mutation$NewIssue =
+    widgets.Widget Function(
+      RunMutation$Mutation$NewIssue,
+      graphql.QueryResult<Mutation$NewIssue>?,
+    );
 
 class Mutation$NewIssue$Widget
     extends graphql_flutter.Mutation<Mutation$NewIssue> {
@@ -581,26 +556,17 @@ class Mutation$NewIssue$Widget
     WidgetOptions$Mutation$NewIssue? options,
     required Builder$Mutation$NewIssue builder,
   }) : super(
-          key: key,
-          options: options ?? WidgetOptions$Mutation$NewIssue(),
-          builder: (
-            run,
-            result,
-          ) =>
-              builder(
-            (
-              variables, {
-              optimisticResult,
-              typedOptimisticResult,
-            }) =>
-                run(
-              variables.toJson(),
-              optimisticResult:
-                  optimisticResult ?? typedOptimisticResult?.toJson(),
-            ),
-            result,
-          ),
-        );
+         key: key,
+         options: options ?? WidgetOptions$Mutation$NewIssue(),
+         builder: (run, result) => builder(
+           (variables, {optimisticResult, typedOptimisticResult}) => run(
+             variables.toJson(),
+             optimisticResult:
+                 optimisticResult ?? typedOptimisticResult?.toJson(),
+           ),
+           result,
+         ),
+       );
 }
 
 class Mutation$NewIssue$createIssue {
@@ -616,7 +582,8 @@ class Mutation$NewIssue$createIssue {
       issue: l$issue == null
           ? null
           : Mutation$NewIssue$createIssue$issue.fromJson(
-              (l$issue as Map<String, dynamic>)),
+              (l$issue as Map<String, dynamic>),
+            ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -638,10 +605,7 @@ class Mutation$NewIssue$createIssue {
   int get hashCode {
     final l$issue = issue;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$issue,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$issue, l$$__typename]);
   }
 
   @override
@@ -670,10 +634,7 @@ class Mutation$NewIssue$createIssue {
 extension UtilityExtension$Mutation$NewIssue$createIssue
     on Mutation$NewIssue$createIssue {
   CopyWith$Mutation$NewIssue$createIssue<Mutation$NewIssue$createIssue>
-      get copyWith => CopyWith$Mutation$NewIssue$createIssue(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Mutation$NewIssue$createIssue(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$NewIssue$createIssue<TRes> {
@@ -685,19 +646,13 @@ abstract class CopyWith$Mutation$NewIssue$createIssue<TRes> {
   factory CopyWith$Mutation$NewIssue$createIssue.stub(TRes res) =
       _CopyWithStubImpl$Mutation$NewIssue$createIssue;
 
-  TRes call({
-    Mutation$NewIssue$createIssue$issue? issue,
-    String? $__typename,
-  });
+  TRes call({Mutation$NewIssue$createIssue$issue? issue, String? $__typename});
   CopyWith$Mutation$NewIssue$createIssue$issue<TRes> get issue;
 }
 
 class _CopyWithImpl$Mutation$NewIssue$createIssue<TRes>
     implements CopyWith$Mutation$NewIssue$createIssue<TRes> {
-  _CopyWithImpl$Mutation$NewIssue$createIssue(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$NewIssue$createIssue(this._instance, this._then);
 
   final Mutation$NewIssue$createIssue _instance;
 
@@ -705,25 +660,26 @@ class _CopyWithImpl$Mutation$NewIssue$createIssue<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? issue = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$NewIssue$createIssue(
-        issue: issue == _undefined
-            ? _instance.issue
-            : (issue as Mutation$NewIssue$createIssue$issue?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? issue = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Mutation$NewIssue$createIssue(
+          issue: issue == _undefined
+              ? _instance.issue
+              : (issue as Mutation$NewIssue$createIssue$issue?),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 
   CopyWith$Mutation$NewIssue$createIssue$issue<TRes> get issue {
     final local$issue = _instance.issue;
     return local$issue == null
         ? CopyWith$Mutation$NewIssue$createIssue$issue.stub(_then(_instance))
         : CopyWith$Mutation$NewIssue$createIssue$issue(
-            local$issue, (e) => call(issue: e));
+            local$issue,
+            (e) => call(issue: e),
+          );
   }
 }
 
@@ -733,10 +689,7 @@ class _CopyWithStubImpl$Mutation$NewIssue$createIssue<TRes>
 
   TRes _res;
 
-  call({
-    Mutation$NewIssue$createIssue$issue? issue,
-    String? $__typename,
-  }) =>
+  call({Mutation$NewIssue$createIssue$issue? issue, String? $__typename}) =>
       _res;
 
   CopyWith$Mutation$NewIssue$createIssue$issue<TRes> get issue =>
@@ -750,7 +703,8 @@ class Mutation$NewIssue$createIssue$issue {
   });
 
   factory Mutation$NewIssue$createIssue$issue.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$id = json['id'];
     final l$$__typename = json['__typename'];
     return Mutation$NewIssue$createIssue$issue(
@@ -776,10 +730,7 @@ class Mutation$NewIssue$createIssue$issue {
   int get hashCode {
     final l$id = id;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$id,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$id, l$$__typename]);
   }
 
   @override
@@ -808,11 +759,9 @@ class Mutation$NewIssue$createIssue$issue {
 extension UtilityExtension$Mutation$NewIssue$createIssue$issue
     on Mutation$NewIssue$createIssue$issue {
   CopyWith$Mutation$NewIssue$createIssue$issue<
-          Mutation$NewIssue$createIssue$issue>
-      get copyWith => CopyWith$Mutation$NewIssue$createIssue$issue(
-            this,
-            (i) => i,
-          );
+    Mutation$NewIssue$createIssue$issue
+  >
+  get copyWith => CopyWith$Mutation$NewIssue$createIssue$issue(this, (i) => i);
 }
 
 abstract class CopyWith$Mutation$NewIssue$createIssue$issue<TRes> {
@@ -824,18 +773,12 @@ abstract class CopyWith$Mutation$NewIssue$createIssue$issue<TRes> {
   factory CopyWith$Mutation$NewIssue$createIssue$issue.stub(TRes res) =
       _CopyWithStubImpl$Mutation$NewIssue$createIssue$issue;
 
-  TRes call({
-    String? id,
-    String? $__typename,
-  });
+  TRes call({String? id, String? $__typename});
 }
 
 class _CopyWithImpl$Mutation$NewIssue$createIssue$issue<TRes>
     implements CopyWith$Mutation$NewIssue$createIssue$issue<TRes> {
-  _CopyWithImpl$Mutation$NewIssue$createIssue$issue(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Mutation$NewIssue$createIssue$issue(this._instance, this._then);
 
   final Mutation$NewIssue$createIssue$issue _instance;
 
@@ -843,16 +786,15 @@ class _CopyWithImpl$Mutation$NewIssue$createIssue$issue<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? id = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Mutation$NewIssue$createIssue$issue(
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? id = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Mutation$NewIssue$createIssue$issue(
+          id: id == _undefined || id == null ? _instance.id : (id as String),
+          $__typename: $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+        ),
+      );
 }
 
 class _CopyWithStubImpl$Mutation$NewIssue$createIssue$issue<TRes>
@@ -861,9 +803,5 @@ class _CopyWithStubImpl$Mutation$NewIssue$createIssue$issue<TRes>
 
   TRes _res;
 
-  call({
-    String? id,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? id, String? $__typename}) => _res;
 }
