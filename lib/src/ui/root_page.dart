@@ -64,7 +64,7 @@ final class _RootState extends State<RootPage>
       ),
       body: ListenableBuilder(
         listenable: appService,
-        builder: (_, __) {
+        builder: (_, _) {
           final gqlCache = appService.gqlCache;
           return TabBarView(
             controller: _tabController,
@@ -116,7 +116,7 @@ final class _CacheMapView extends StatelessWidget {
           },
         );
       },
-      separatorBuilder: (_, __) => const Divider(
+      separatorBuilder: (_, _) => const Divider(
         height: 1,
         thickness: 1,
       ),

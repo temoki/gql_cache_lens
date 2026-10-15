@@ -85,7 +85,7 @@ final class _ObjectTile extends StatelessWidget {
     final appService = AppServiceProvider.of(context);
     return ListenableBuilder(
       listenable: appService,
-      builder: (_, __) {
+      builder: (_, _) {
         final normalizedMap = appService.gqlCache.normalized;
         final refObject = key == r'$ref' ? normalizedMap[value] : null;
         return ListTile(
