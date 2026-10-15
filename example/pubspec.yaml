@@ -28,7 +28,7 @@ dev_dependencies:
   gql_cache_lens:
     path: ..
   graphql_codegen: ^2.0.0
-  pedantic_mono: any
+  pedantic_mono: ^1.37.0
 
 flutter:
   uses-material-design: true
