@@ -11,22 +11,34 @@ final class CacheDetailPanel extends StatelessWidget {
     super.key,
     required this.dataId,
     required this.object,
+    required this.focusNode,
     required this.onClose,
+    required this.onExit,
   });
 
   final String dataId;
   final dynamic object;
+
+  /// The focus node of the first page's tree.
+  final FocusNode focusNode;
   final VoidCallback onClose;
+
+  /// Called when the user leaves the panel with the keyboard.
+  final VoidCallback onExit;
 
   @override
   Widget build(BuildContext context) {
     return Navigator(
+      // Opening the panel must not take the focus away from the list.
+      requestFocus: false,
       pages: [
         MaterialPage<void>(
           child: ObjectPage(
             dataId: dataId,
             object: object,
+            focusNode: focusNode,
             onClose: onClose,
+            onExit: onExit,
           ),
         ),
       ],

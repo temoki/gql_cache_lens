@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../service/gql_cache.dart';
 import 'app_service_provider.dart';
 import 'cache_detail_panel.dart';
+import 'scroll_into_view.dart';
 
 final class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -22,7 +23,10 @@ final class _RootState extends State<RootPage>
   static const _minPaneWidth = 240.0;
 
   late final TabController _tabController;
+
+  /// Has the primary focus while the list is focused.
   final _focusNode = FocusNode(debugLabel: 'RootPage');
+  final _detailFocusNode = FocusNode(debugLabel: 'CacheDetailPanel');
 
   /// The selected data ID of each tab.
   final _selectedKeys = <GqlCacheCategory, String>{};
@@ -39,6 +43,7 @@ final class _RootState extends State<RootPage>
       length: GqlCacheCategory.values.length,
       vsync: this,
     )..addListener(_onTabChanged);
+    _focusNode.addListener(_onFocusChanged);
     super.initState();
   }
 
@@ -53,7 +58,10 @@ final class _RootState extends State<RootPage>
     _tabController
       ..removeListener(_onTabChanged)
       ..dispose();
-    _focusNode.dispose();
+    _focusNode
+      ..removeListener(_onFocusChanged)
+      ..dispose();
+    _detailFocusNode.dispose();
     super.dispose();
   }
 
@@ -62,6 +70,23 @@ final class _RootState extends State<RootPage>
       return;
     }
     setState(() {});
+  }
+
+  void _onFocusChanged() {
+    // Rebuild to change the highlight of the selected item.
+    setState(() {});
+  }
+
+  void _closeDetail() {
+    _select(_currentCategory, null);
+    _focusNode.requestFocus();
+  }
+
+  void _focusDetail() {
+    // The node has a context only while the detail panel is shown.
+    if (_detailFocusNode.context != null) {
+      _detailFocusNode.requestFocus();
+    }
   }
 
   void _select(GqlCacheCategory category, String? dataId) {
@@ -99,8 +124,8 @@ final class _RootState extends State<RootPage>
             _moveSelection(1),
         const SingleActivator(LogicalKeyboardKey.arrowUp): () =>
             _moveSelection(-1),
-        const SingleActivator(LogicalKeyboardKey.escape): () =>
-            _select(_currentCategory, null),
+        const SingleActivator(LogicalKeyboardKey.arrowRight): _focusDetail,
+        const SingleActivator(LogicalKeyboardKey.escape): _closeDetail,
       },
       child: Focus(
         focusNode: _focusNode,
@@ -138,20 +163,24 @@ final class _RootState extends State<RootPage>
               final category = _currentCategory;
               final cacheMap = gqlCache[category];
               final selectedKey = _selectedKeys[category];
-              final tabView = TabBarView(
-                controller: _tabController,
-                children: GqlCacheCategory.values
-                    .map(
-                      (category) => _CacheMapView(
-                        cacheMap: gqlCache[category],
-                        selectedKey: _selectedKeys[category],
-                        onSelect: (dataId) {
-                          _select(category, dataId);
-                          _focusNode.requestFocus();
-                        },
-                      ),
-                    )
-                    .toList(),
+              final tabView = Listener(
+                onPointerDown: (_) => _focusNode.requestFocus(),
+                child: TabBarView(
+                  controller: _tabController,
+                  children: GqlCacheCategory.values
+                      .map(
+                        (category) => _CacheMapView(
+                          cacheMap: gqlCache[category],
+                          selectedKey: _selectedKeys[category],
+                          hasFocus: _focusNode.hasPrimaryFocus,
+                          onSelect: (dataId) {
+                            _select(category, dataId);
+                            _focusNode.requestFocus();
+                          },
+                        ),
+                      )
+                      .toList(),
+                ),
               );
               if (selectedKey == null || !cacheMap.containsKey(selectedKey)) {
                 return tabView;
@@ -186,7 +215,9 @@ final class _RootState extends State<RootPage>
                           key: ValueKey((category, selectedKey)),
                           dataId: selectedKey,
                           object: cacheMap[selectedKey],
-                          onClose: () => _select(category, null),
+                          focusNode: _detailFocusNode,
+                          onClose: _closeDetail,
+                          onExit: _focusNode.requestFocus,
                         ),
                       ),
                     ],
@@ -231,11 +262,13 @@ final class _CacheMapView extends StatefulWidget {
   const _CacheMapView({
     required this.cacheMap,
     required this.selectedKey,
+    required this.hasFocus,
     required this.onSelect,
   });
 
   final Map<String, dynamic> cacheMap;
   final String? selectedKey;
+  final bool hasFocus;
   final ValueChanged<String> onSelect;
 
   @override
@@ -254,23 +287,12 @@ final class _CacheMapViewState extends State<_CacheMapView> {
       return;
     }
     final dataIds = widget.cacheMap.keys.toList();
-    final movedDown =
-        oldSelectedKey == null ||
-        dataIds.indexOf(selectedKey) > dataIds.indexOf(oldSelectedKey);
-    // Scroll only as far as needed to keep the selected item visible.
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final itemContext = _selectedItemKey.currentContext;
-      if (!mounted || itemContext == null) {
-        return;
-      }
-      Scrollable.ensureVisible(
-        itemContext,
-        duration: const Duration(milliseconds: 100),
-        alignmentPolicy: movedDown
-            ? ScrollPositionAlignmentPolicy.keepVisibleAtEnd
-            : ScrollPositionAlignmentPolicy.keepVisibleAtStart,
-      );
-    });
+    scrollIntoView(
+      _selectedItemKey,
+      forward:
+          oldSelectedKey == null ||
+          dataIds.indexOf(selectedKey) > dataIds.indexOf(oldSelectedKey),
+    );
   }
 
   @override
@@ -290,7 +312,9 @@ final class _CacheMapViewState extends State<_CacheMapView> {
             style: GoogleFonts.robotoMono(),
           ),
           selected: isSelected,
-          selectedTileColor: colorScheme.secondaryContainer,
+          selectedTileColor: widget.hasFocus
+              ? colorScheme.secondaryContainer
+              : colorScheme.surfaceContainerHighest,
           onTap: () => widget.onSelect(dataId),
         );
       },
