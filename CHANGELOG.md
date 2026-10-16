@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0] - 2026-10-16
+### Added
+- Added keyboard navigation.
+  - Up / Down moves the selection in the cache list and in the detail panel.
+  - Right / Left expands / collapses an item in the detail panel, and moves the focus between the cache list and the detail panel.
+  - Enter expands / collapses an item or follows a `$ref`.
+  - Escape closes the detail panel.
+
+### Changed
+- Cache entry details are now shown in a resizable side panel instead of a separate page.
+- Supported `devtools_extensions` 0.5.
+- Removed the dependency on `google_fonts`. The monospace font bundled with DevTools is used instead, so fonts are no longer downloaded at runtime.
+- Raised the minimum SDK versions to Dart 3.8 and Flutter 3.32.
+
 ## [1.0.0] - 2025-01-18
 ### Fixed
 - Fix publishing issue. [#10](https://github.com/temoki/gql_cache_lens/issues/10)
