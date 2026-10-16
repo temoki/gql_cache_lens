@@ -8,10 +8,12 @@ final class ObjectPage extends StatelessWidget {
     super.key,
     required this.dataId,
     required this.object,
+    this.onClose,
   });
 
   final String dataId;
   final dynamic object;
+  final VoidCallback? onClose;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,14 @@ final class ObjectPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(dataId),
+        actions: [
+          if (onClose != null)
+            IconButton(
+              icon: const Icon(Icons.close),
+              tooltip: 'Close',
+              onPressed: onClose,
+            ),
+        ],
       ),
       body: ListView.builder(
         itemCount: objectMap.length,
