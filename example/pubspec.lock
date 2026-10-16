@@ -237,26 +237,26 @@ packages:
     dependency: transitive
     description:
       name: devtools_app_shared
-      sha256: "04cc1fa26220ea65d815b30fd6d070264adc02442dc0c4446bce8da5e4f21d4d"
+      sha256: dbfd6f497368d9d187f7f334870d559cfa9a78c10c74f786e42b38cf62398a88
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.0"
+    version: "0.5.1"
   devtools_extensions:
     dependency: transitive
     description:
       name: devtools_extensions
-      sha256: ffb198ff8f6f5126daaa835f86bd9e53a782fbfaefc0ce611c1d267b07c8b91b
+      sha256: "01b979a7e72dc02402b08b7d75d24d6b0cb07416b61ef434f43042bec7a5f8fd"
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.0"
+    version: "0.5.1"
   devtools_shared:
     dependency: transitive
     description:
       name: devtools_shared
-      sha256: "2daf7a9fba6a470668b26ecbd04200f7bf992aad81a2c31d12457c7791419dea"
+      sha256: "13df2c17d5f21dd7c92d08145386d45e1153364c04e531e994afb0ee7b67554b"
       url: "https://pub.dev"
     source: hosted
-    version: "12.1.0"
+    version: "13.1.0"
   dtd:
     dependency: transitive
     description:
@@ -400,14 +400,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
-  google_fonts:
-    dependency: transitive
-    description:
-      name: google_fonts
-      sha256: ba03d03bcaa2f6cb7bd920e3b5027181db75ab524f8891c8bc3aa603885b8055
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.3.3"
   gql:
     dependency: "direct main"
     description:

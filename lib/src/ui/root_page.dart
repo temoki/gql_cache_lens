@@ -2,12 +2,12 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../service/gql_cache.dart';
 import 'app_service_provider.dart';
 import 'cache_detail_panel.dart';
 import 'scroll_into_view.dart';
+import 'text_styles.dart';
 
 final class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -309,7 +309,7 @@ final class _CacheMapViewState extends State<_CacheMapView> {
           key: isSelected ? _selectedItemKey : null,
           title: Text(
             dataId,
-            style: GoogleFonts.robotoMono(),
+            style: monospaceTextStyle,
           ),
           selected: isSelected,
           selectedTileColor: widget.hasFocus

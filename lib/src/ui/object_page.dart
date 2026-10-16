@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'app_service_provider.dart';
 import 'scroll_into_view.dart';
+import 'text_styles.dart';
 
 /// Shows a cache object as a tree that can be operated with the keyboard.
 ///
@@ -348,7 +348,7 @@ final class _ObjectRowTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    final keyStyle = GoogleFonts.robotoMono();
+    const keyStyle = monospaceTextStyle;
     final valueStyle = keyStyle.copyWith(color: colorScheme.primary);
     final value = row.value;
     return ListTile(
