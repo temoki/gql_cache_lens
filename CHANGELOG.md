@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.1] - 2026-10-17
+### Changed
+- Updated the README screenshot. No code changes.
+
 ## [1.1.0] - 2026-10-16
 ### Added
 - Added keyboard navigation.
