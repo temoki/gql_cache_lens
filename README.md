@@ -14,13 +14,13 @@ Currently, `gql_cache_lens` supports the following GraphQL packages:
 - [ferry](https://pub.dev/packages/ferry), [ferry_flutter](https://pub.dev/packages/ferry_flutter)
 
 ## Screenshots
-![Screenshot](./screenshot.png)
+![Screenshot](https://github.com/temoki/gql_cache_lens/raw/main/screenshot.png)
 
 ## Installation
 To install `gql_cache_lens`, add the package to your `pubspec.yaml` file:
 ```yaml
 dev_dependencies:
-  gql_cache_lens: ^1.1.1
+  gql_cache_lens: ^1.1.2
 ```
 
 Alternatively, you can run the following command

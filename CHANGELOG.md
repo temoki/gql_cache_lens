@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.2] - 2026-10-17
+### Fixed
+- Fixed the README screenshot not being shown on pub.dev. No code changes.
+
 ## [1.1.1] - 2026-10-17
 ### Changed
 - Updated the README screenshot. No code changes.
